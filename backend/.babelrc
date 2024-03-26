@@ -1,0 +1,6 @@
+{
+    "presets": [
+        "es2015", //Adds support for ES2015 (or ES6) JavaScript
+        "stage-2"
+    ]
+}

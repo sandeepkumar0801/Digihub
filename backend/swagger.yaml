@@ -1,0 +1,1917 @@
+openapi: 3.0.0
+info:
+  title: Channel Connector API
+  version: 1.0.0
+  description: Channel and FBY SYNC related operations API.
+servers:
+- url: http://localhost:5000/
+  description: BASE_URL  
+tags:
+  - name: Shopify Products and Price Sync
+    description: create products in Shopify account by fetching Products and Price from FBY
+
+  - name: Amazon Price Sync
+    description: create price details in Amazon account by fetching Price from FBY
+
+  - name: Mirakl Price Sync
+    description: create price details in Amazon account by fetching Price from FBY
+
+  - name: Client And Channel
+    description: The Client And Channel Managing API
+
+  - name: Shopify
+    description: The Shopify & FBY Syncing Managing API  
+
+  - name: WooCommerce
+    description: The WooCommerce & FBY Syncing Managing API  
+  
+  - name: Mirakl
+    description: The Mirakl & FBY Syncing Managing API  
+
+  - name: Storeden
+    description: The Storeden & FBY Syncing Managing API  
+  - name: Prestashop
+    description: The Prestashop & FBY Syncing Managing API  
+  
+  - name: Ebay
+    description: The Ebay & FBY Syncing Managing API
+
+  - name: Amazon
+    description: The Amazon & FBY Syncing Managing API
+
+  - name: Carriers
+    description: The Carrier Managing API   
+    
+  - name: Magento
+    description: The Magento & FBY Syncing Managing API
+
+  - name: Products
+    description: The Products Managing API
+  - name: Stocks
+    description: The Stocks Managing API
+  - name: Orders
+    description: The Orders Managing API  
+  - name: Trackings
+    description: The Trackings Managing API  
+  
+  - name: Master Data
+    description: The FBY Master Data Sync APIs  
+  - name: Error
+    description: The FBY Error Managing API      
+  
+paths:
+  /client/:
+    post:
+      summary: Perform any of (insert/update/delete/get)
+      tags: [Client And Channel]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+              $ref: '#/components/schemas/clientRequest' 
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /channel/:
+    post:
+      summary: Perform any of (insert/update/delete/get)
+      tags: [Client And Channel]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+              $ref: '#/components/schemas/channelRequest' 
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /shopify/api/get_products_fby/:
+    get:
+      summary: Step 1) GET_PRODUCTS_FROM_FBY
+      tags: [Shopify Products and Price Sync]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ChannelId from channel config.
+         - in: query
+           name: updated_after
+           schema:
+             type: string
+             example: "2022-06-20 01:01:01"
+           required: true
+           description: 'Date in format "YYYY-MM-DD HH:mm:ss", Preferably 2 days before current date.'  
+         
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []    
+  /shopify/api/get_prices_fby/:
+    get:
+      summary: Step 2) GET_PRODUCTS_PRICE_FROM_FBY
+      tags: [Shopify Products and Price Sync]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ChannelId from channel config.
+         - in: query
+           name: updated_after
+           schema:
+             type: string
+             example: "2022-06-20 01:01:01"
+           required: true
+           description: 'Date in format "YYYY-MM-DD HH:mm:ss", Preferably 2 days before current date.'  
+         
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /shopify/api/push_product_shopify/:
+    get:
+      summary: Step 3) PUSH_PRODUCTS_TO_SHOPIFY
+      tags: [Shopify Products and Price Sync]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ChannelId from channel config.
+         
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []  
+  /shopify/api/push_product_images/:
+    get:
+      summary: Step 4) PUSH_PRODUCTS_IMAGES_TO_SHOPIFY
+      tags: [Shopify Products and Price Sync]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ChannelId from channel config.
+         
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /shopify/api/push_variants_shopify/:
+    get:
+      summary: Step 5) (last Step) PUSH_PRODUCTS_VARIANTS_TO_SHOPIFY
+      tags: [Shopify Products and Price Sync]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ChannelId from channel config.
+         
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []  
+  /shopify/api/update_products_shopify/:
+    get:
+      summary: Step 6) (UPDATE) UPDATE_PRODUCTS_VARIANTS_TO_SHOPIFY
+      tags: [Shopify Products and Price Sync]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ChannelId from channel config.
+         
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []  
+  /shopify/api/get_shopify_products/:
+    get:
+      summary: Get Shopify Products and sync location if where its missing. (Step 1 for syncing product)
+      tags: [Shopify,Products]
+      parameters:
+         
+         - name: fby_user_id
+           in: query
+           schema:
+             type: string
+             example: '1002'
+           required: true
+           description: ID of the user to get
+           
+         - name: product_id
+           in: query
+           schema:
+             type: string
+             example: '6836919959709'
+           required: false
+           description: product _id 
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []   
+  /shopify/api/get_shopify_location:
+    get:
+      summary: Get Shopify Location and sync with downloaded products before sending to FBY. Requied only when location id is missing in products table. (Step 2 for syncing product)
+      tags: [Shopify,Products]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ChannelId from channel config.
+         
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []       
+  /shopify/api/send_products_fby:
+    get:
+      summary: Send Products to FBY. (Step 3/last for syncing product) 
+      tags: [Shopify,Products,Storeden,WooCommerce,Mirakl,Magento]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: '1002'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /shopify/api/get_fby_stock:
+    get:
+      summary: Get Fby Stock (Step 1 for syncing Stock)
+      tags: [Shopify,Stocks,Storeden,WooCommerce,Amazon,Mirakl,Prestashop,Magento]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: '1002'
+           required: true
+           description: ID of the user to get
+         - in: query
+           name: updated_after
+           schema:
+             type: string
+             example: "2022-01-01 01:01:01"
+           required: true
+           description: 'Date in format "YYYY-MM-DD HH:mm:ss", Preferably 2 days before current date.'
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /shopify/api/push_stock_shopify:
+    get:
+      summary: Push Shopify Stock (Step 2/last for syncing Stock)
+      tags: [Shopify,Stocks]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+        
+  /shopify/api/get_shopify_orders:
+    get:
+      summary: Get Shopify Orders (Step 1 for syncing Orders)
+      tags: [Shopify,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /shopify/api/send_orders_fby:
+    get:
+      summary: Send Order FBY (Step 2 for syncing Orders)
+      tags: [Shopify,Orders,Storeden,WooCommerce,Amazon,Mirakl,Prestashop,Magento]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /shopify/api/send_cancelled_orders_fby:
+    get:
+      summary: Send Caneclled Orders FBY (Step 3/last for syncing Orders)
+      tags: [Shopify,Orders,Storeden,WooCommerce,Amazon,Mirakl,Prestashop,Magento]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /shopify/api/get_track_number: 
+    get:
+      summary: Get Track Number (Step 1 for syncing Tracking Number)
+      tags: [Shopify,Trackings,Storeden,WooCommerce,Amazon,Mirakl,Prestashop,Magento]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /shopify/api/push_tracks_shopify:
+    get:
+      summary: Push Shopify Tracks (Step 2/last for syncing Tracking Number)
+      tags: [Shopify,Trackings]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /api/fby_alert:
+    get:
+      summary: send Alert to FBY
+      tags: [Error]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []    
+  /shopify/api/error_manage/:
+    get:
+      summary: Error Management API
+      tags: [Error]
+      parameters:
+         - in: query
+           name: case
+           schema:
+             type: string
+             enum: [send_Orders_Fby, send_Products_Fby]
+             example: send_Orders_Fby
+           required: true
+           description: Any of [send_Orders_Fby, send_Products_Fby].
+         
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /api/fby_apis:
+    get:
+      summary: FBY master data sync APIs (payment_method_code, cancel_reason, alert_codes, alert_domains, channel_codes, and currency_codes )
+      tags: [Master Data]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ID of the user to get
+         - name: case
+           in: query
+           schema:
+             type: string
+             enum: [payment_method_code, cancel_reason, alert_codes, alert_domains, channel_codes, currency_codes]
+             example: payment_method_code
+             description: Any of [payment_method_code, cancel_reason, alert_codes, alert_domains, channel_codes, currency_codes] master data will be syncd
+           required: true
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []     
+  /storeden/api/push_stock_storeden:
+    get:
+      summary: Push Storeden Stock (1st get_fby_stock then last step for Storeden stock syncing)
+      tags: [Storeden,Stocks]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1004
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /storeden/api/get_products_list/:
+    get:
+      summary: Get Storeden Products. (Step 1 for syncing product)
+      tags: [Storeden,Products]
+      parameters:
+         
+         - name: fby_user_id
+           in: query
+           schema:
+             type: string
+             example: '1004'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []  
+  /storeden/api/get_storeden_orders:
+    get:
+      summary: Get Storeden Orders (Step 1 for syncing Orders)
+      tags: [Storeden,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1004
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []       
+  /storeden/api/push_track:
+    get:
+      summary: Push Storeden Tracking (Step 2/last for syncing Tracking Number)
+      tags: [Storeden,Trackings]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1004
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /woocommerce/api/push_stock_woocommerce:
+    get:
+      summary: Push WooCommerce Stock (1st get_fby_stock then last step for WooCommerce stock syncing)
+      tags: [WooCommerce,Stocks]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1006
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /woocommerce/api/get_products_list/:
+    get:
+      summary: Get Products. (Step 1 for syncing product)
+      tags: [WooCommerce,Products]
+      parameters:
+         
+         - name: fby_user_id
+           in: query
+           schema:
+             type: string
+             example: '1006'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []  
+  /woocommerce/api/get_woocommerce_orders:
+    get:
+      summary: Get Orders (Step 1 for syncing Orders)
+      tags: [WooCommerce,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1006
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []       
+  /woocommerce/api/push_track:
+    get:
+      summary: Push WooCommerce Tracking (Step 2/last for syncing Tracking Number)
+      tags: [WooCommerce,Trackings]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1006
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /prestashop/api/get_presta_products:
+    get:
+      summary: Get Prestashop Products. (Step 1 for syncing product)
+      tags: [Prestashop,Products]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: '1005'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []   
+  /prestashop/api/send_products_fby:
+    get:
+      summary: Send Products to FBY. (Step 2/last for syncing product)
+      tags: [Prestashop,Products]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: '1005'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /prestashop/api/push_stock_presta:
+    get:
+      summary: Push Prestashop Stock (Step 2/last for syncing Stock)
+      tags: [Prestashop,Stocks]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1005
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /prestashop/api/get_presta_orders:
+    get:
+      summary: Get Prestashop Orders (Step 1 for syncing Orders)
+      tags: [Prestashop,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1005
+           required: true
+           description: ID of the user to get
+         - in: query
+           name: updated_after
+           schema:
+             type: string
+             example: "2022-03-03 11:59:48"
+           required: true
+           description: 'Date in format "YYYY-MM-DD HH:mm:ss", Preferably 2 days before current date.'
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /prestashop/api/push_tracks:
+    get:
+      summary: Push Prestashop Tracks (Step 2/last for syncing Tracking Number)
+      tags: [Prestashop,Trackings]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1005
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /amazon/api/generate_products_report_amazon/:
+    get:
+      summary: Generate Amazon Products Report
+      tags: [Amazon]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1010
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /amazon/api/get_products_amazon/:
+    get:
+      summary: Get Amazon Products.
+      tags: [Amazon,Products]
+      parameters:
+         
+         - name: fby_user_id
+           in: query
+           schema:
+             type: string
+             example: '1010'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []  
+  /amazon/api/get_orders_amazon/:
+    get:
+      summary: Get Amazon Orders
+      tags: [Amazon,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1010
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /amazon/api/push_stock_Amazon:
+    get:
+      summary: Push Fby Stock 
+      tags: [Stocks,Amazon]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: '1011'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []    
+  /amazon/api/push_Tracking_Amazon:
+    get:
+      summary: Push Tracking for order
+      tags: [Orders,Amazon]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: '1011'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []    
+  /fby/api/get_prices_fby/:
+    get:
+      summary: Step 1) GET_PRODUCTS_PRICE_FROM_FBY
+      tags: [Price Sync]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ChannelId from channel config.
+         - in: query
+           name: updated_after
+           schema:
+             type: string
+             example: "2022-06-20 01:01:01"
+           required: true
+           description: 'Date in format "YYYY-MM-DD HH:mm:ss", Preferably 2 days before current date.'           
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []   
+  /amazon/api/push_price/:
+    get:
+      summary: Step 2) (last Step) PUSH_PRICE_TO_AMAZON
+      tags: [Amazon Price Sync]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1002
+           required: true
+           description: ChannelId from channel config.     
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []        
+  /mirakl/api/get_Products_Mirakl/:
+    get:
+      summary: Get Mirakl Products.
+      tags: [Mirakl,Products]
+      parameters:
+         
+         - name: fby_user_id
+           in: query
+           schema:
+             type: string
+             example: '1111'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed!
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /mirakl/api/get_Carriers_Mirakl/:
+    get:
+      summary: Get Mirakl Carriers.
+      tags: [Mirakl,Carriers]
+      parameters:        
+         - name: fby_user_id
+           in: query
+           schema:
+             type: string
+             example: '1111'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed!
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []       
+  /mirakl/api/push_stock_Mirakl/:
+    get:
+      summary: Push Mirakl Orders Tracking
+      tags: [Mirakl,Stocks]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1111
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []  
+  /mirakl/api/get_orders_Mirakl/:
+    get:
+      summary: Get Mirakl Orders
+      tags: [Mirakl,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1111
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /mirakl/api/push_Tracking_Mirakl/:
+    get:
+      summary: Push Mirakl Orders Tracking
+      tags: [Mirakl,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1111
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /prestashop/api/error_manage/:
+    get:
+      summary: Error Management API
+      tags: [Prestashop,Error]
+      parameters:
+         - in: query
+           name: case
+           schema:
+             type: string
+             enum: [get_presta_products, send_Products_Fby,get_Fby_Stock,push_stock_presta,get_presta_orders,send_Orders_Fby,send_Canceled_Orders_Fby,get_track_number,push_Track_Presta]
+             example: get_presta_products
+           required: true
+           description: Any of [get_presta_products, send_Products_Fby, get_Fby_Stock, push_stock_presta, get_presta_orders, send_Orders_Fby, send_Canceled_Orders_Fby, get_track_number, push_Track_Presta].
+         - in: query
+           name: updated_after
+           schema:
+             type: string
+             example: "2022-01-01 01:01:01"
+           required: false
+           description: 'Optional parameter in case-"get_Fby_Stock".Date in format "YYYY-MM-DD HH:mm:ss", Preferably 2 days before current date.'
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /ebay/api/get_ebay_products:
+    get:
+      summary: Get Ebay Products. (Step 1 for syncing product)
+      tags: [Ebay,Products]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: '1007'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []   
+  /ebay/api/send_products_fby:
+    get:
+      summary: Send Products to FBY. (Step 2/last for syncing product)
+      tags: [Ebay,Products]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: '1007'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /ebay/api/get_fby_stock:
+    get:
+      summary: Get Fby Stock (Step 1 for syncing Stock)
+      tags: [Ebay,Stocks]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: '1007'
+           required: true
+           description: ID of the user to get
+         - in: query
+           name: updated_after
+           schema:
+             type: string
+             example: "2022-01-01 01:01:01"
+           required: true
+           description: 'Date in format "YYYY-MM-DD HH:mm:ss", Preferably 2 days before current date.'
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /ebay/api/push_stock_ebay:
+    get:
+      summary: Push Ebay Stock (Step 2/last for syncing Stock)
+      tags: [Ebay,Stocks]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1007
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /ebay/api/get_ebay_orders:
+    get:
+      summary: Get Ebay Orders (Step 1 for syncing Orders)
+      tags: [Ebay,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1007
+           required: true
+           description: ID of the user to get
+         - in: query
+           name: updated_after
+           schema:
+             type: string
+             example: "2022-03-23 20:34:44"
+           required: true
+           description: 'Date in format "YYYY-MM-DD HH:mm:ss", Preferably 2 days before current date.'
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /ebay/api/send_orders_fby:
+    get:
+      summary: Send Order FBY (Step 2 for syncing Orders)
+      tags: [Ebay,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1007
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []  
+  /ebay/api/send_canceled_orders_fby:
+    get:
+      summary: Send Caneclled Orders FBY (Step 3/last for syncing Orders)
+      tags: [Ebay,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1007
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /ebay/api/get_track_number: 
+    get:
+      summary: Get Track Number (Step 1 for syncing Tracking Number)
+      tags: [Ebay,Trackings]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1007
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /ebay/api/push_traks_ebay:
+    get:
+      summary: Push Ebay Tracks (Step 2/last for syncing Tracking Number)
+      tags: [Ebay,Trackings]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1007
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /ebay/api/error_manage/:
+    get:
+      summary: Error Management API
+      tags: [Ebay,Error]
+      parameters:
+         - in: query
+           name: case
+           schema:
+             type: string
+             enum: [get_ebay_products, send_Products_Fby,get_Fby_Stock,push_stock_ebay,get_ebay_orders,send_Orders_Fby,send_Canceled_Orders_Fby,get_track_number,push_Track_ebay]
+             example: get_ebay_products
+           required: true
+           description: Any of [get_ebay_products, send_Products_Fby, get_Fby_Stock, push_stock_ebay, get_ebay_orders, send_Orders_Fby, send_Canceled_Orders_Fby, get_track_number, push_Track_ebay].
+         - in: query
+           name: updated_after
+           schema:
+             type: string
+             example: "2022-01-01 01:01:01"
+           required: false
+           description: 'Optional parameter in case-"get_Fby_Stock".Date in format "YYYY-MM-DD HH:mm:ss", Preferably 2 days before current date.'
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []  
+  /magento/api/get_magento_products:
+    get:
+      summary: Get Magento Products. (Step 1 for syncing product)
+      tags: [Magento,Products]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: '1008'
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []   
+  /magento/api/push_stock_magento:
+    get:
+      summary: Push Magento Stock (Step 2/last for syncing Stock)
+      tags: [Magento,Stocks]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1008
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []
+  /magento/api/get_magento_orders:
+    get:
+      summary: Get Magento Orders (Step 1 for syncing Orders)
+      tags: [Magento,Orders]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1008
+           required: true
+           description: ID of the user to get
+         - in: query
+           name: updated_after
+           schema:
+             type: string
+             example: "2020-09-10 11:31:59"
+           required: true
+           description: 'Date in format "YYYY-MM-DD HH:mm:ss", Preferably 2 days before current date.'
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: [] 
+  /magento/api/push_traks_magento:
+    get:
+      summary: Push Magento Tracks (Step 2/last for syncing Tracking Number)
+      tags: [Magento,Trackings]
+      parameters:
+         - in: query
+           name: fby_user_id
+           schema:
+             type: string
+             example: 1008
+           required: true
+           description: ID of the user to get
+      responses:
+        400:
+          description: Bad request or  Authorization token is missing!
+        401:
+          description: Authorization failed! 
+        404:
+          description: Data not found!.  
+        409:
+          description: Resource already exists!
+        200:
+          description: Request processed successfully.
+      security:
+       - jwt: []               
+components:
+  securitySchemes:
+    jwt:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    clientRequest:
+        type: object
+        properties:
+          action:
+            type: string
+            enum: [insert, update, delete, get]
+            description: any of (insert/update/delete/get)
+            example: 'get'
+          client:
+            type: object
+            $ref: '#/components/schemas/client'  
+    client:
+        type: object
+        properties:
+          id:
+            type: string
+            example: Id123
+          name:
+            type: object
+            example: Chicco
+          ownerCode:
+            type: object
+            example: Code-12345
+    channelRequest:
+        type: object
+        properties:
+          action:
+            type: string
+            enum: [insert, update, delete, get]
+            description: any of (insert/update/delete/get)
+            example: get
+          ownerCode:
+            type: string
+            example: 'YT'
+          channel:
+            type: object
+            $ref: '#/components/schemas/channel'
+    channel:
+        type: object
+        properties:
+          id:
+            type: number
+            example: 1002
+          platformName:
+            type: string
+            example: 'Mirakl'
+          platformCode:
+            type: string
+            example: 'MK'   
+          name:
+            type: string
+            example: 'shopify'
+          code:
+            type: string
+            example: 'SFIT'  
+          isEnabled:
+            type: boolean
+            example: true  
+          groupCode:
+            type: string
+            example: 'AEU'  
+          currencyCode:
+            type: string
+            example: 'EUR'   
+          orderSyncStartDate: 
+            type: string
+            example: '2022-02-01 12:00:00'
+          credentials:
+            type: object
+            $ref: '#/components/schemas/channelCredentials'
+          services:
+            type: object
+            $ref: '#/components/schemas/services'   
+    channelCredentials:
+        type: object
+        properties:
+          username:
+            type: string
+            example: ''
+          password:
+            type: string
+            example: '5d19a9bb43a3f99b96ceead80d4a6ff93oVOCmO/1nirivqzhMgqlQE125G+ZrX3zn3xjLSdLhI= or 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'
+          secret:
+            type: string
+            example: ''
+          token:
+            type: string
+            example: ''
+          domain:
+            type: string
+            example: 'shopping170.myshopify.com'
+          apiKey:
+            type: string
+            example: '2ec972a612088fc392de502d7e4c3887'
+          warehouseLocationId: 
+            type: string
+            example: '12345678'    
+          ebay:
+            type: object
+            properties:
+              compatibilityLevel:
+                type: string
+                example: '843'
+              devId:
+                type: string
+                example: ''
+              appId:
+                type: string
+                example: ''
+              certId:
+                type: string
+                example: ''
+              siteId:
+                type: string
+                example: '3'
+          amazon_sp_api:
+            type: object
+            properties:
+              accessKey:
+                type: string
+                example: 'AKIAZDX7KMTAZZ2ILNEG'
+              secretKey:
+                type: string
+                example: '5xMynoZxpZuTdKPvW1vi+ionIyRstLKmngyZhjGx'
+              roleArn:
+                type: string
+                example: 'arn:aws:iam::626526938305:role/amazon-sp-api-role'
+              clientId:
+                type: string
+                example: 'amzn1.application-oa2-client.6f9f60af4335499fa195136dfc68d6ab'
+              clientSecret:
+                type: string
+                example: 'bb72721f822c39cee10d5de32e21d8e20291e09ee19e04000abb73274a65e5c9'  
+              refreshToken:
+                type: string
+                example: 'Atzr|IwEBIEThPmYZZNTWKH6eAmFyvU9baMWdD46eDQCl_9jfKImAPLL1mUXMM_FZT95JYlI1Ng37SYb8uyqrc7nfPLMCxSHykBwUyBbRG_TBI2tdhXU5YCQUt1T--DNauKgAVMmZAM126VT8si64HnRB3MHxWby-MbGrBpP1FKy3Z7JBzUH1LpPGukp-2S_S-tjPPEkKWHs3vTbh4kQ-cqO7uQImT4YMV4CQtPyPAnILTSS8p1OqRbeoDIDqrqS13yQwMWyaJ93uZ8wkaNoUEUq8K6cWSrLGJ5ZCzNpgwloL0JIZwbw2qjH0Sb4tS1zgPnZ7o5sBnFM'  
+              marketPlaceId:
+                type: string
+                example: 'APJ6JRA9NG5V4'     
+              sellerId:
+                type: string
+                example: 'A2ENUTYX0UZGL8'    
+              region:
+                type: string
+                example: 'eu' 
+    services:
+        type: object
+        properties:
+          stockUpdate:
+            type: boolean
+            example: true
+          priceUpdate:
+            type: boolean
+            example: false
+          orderSync:
+            type: boolean
+            example: true
+          productPublish:
+            type: boolean
+            example: false
+          
+    prestashopRequest:
+        type: object
+        properties:
+          action:
+            type: string
+            enum: [insert, update, delete, get]
+            description: any of (insert/update/delete/get)
+            example: get
+          ownerCode:
+            type: string
+            example: 'YT'
+          channel:
+            type: object
+            $ref: '#/components/schemas/prestashop'
+    prestashop:
+        type: object
+        properties:
+          id:
+            type: number
+            example: 1005
+          name:
+            type: string
+            example: 'prestashop'
+          code:
+            type: string
+            example: 'PSIT'  
+          isEnabled:
+            type: boolean
+            example: true  
+          groupCode:
+            type: string
+            example: 'AEU'  
+          currencyCode:
+            type: string
+            example: 'EUR'   
+          credentials:
+            type: object
+            $ref: '#/components/schemas/prestashopCredentials' 
+    prestashopCredentials:
+        type: object
+        properties:
+          username:
+            type: string
+            example: ''
+          password:
+            type: string
+            example: ''
+          secret:
+            type: string
+            example: ''
+          token:
+            type: string
+            example: ''
+          domain:
+            type: string
+            example: 'prestashop.yocabe.com'
+          apiKey:
+            type: string
+            example: 'EHQ8PK3NQXWJ5SKXG3DSLYZ62HRRJA27'            

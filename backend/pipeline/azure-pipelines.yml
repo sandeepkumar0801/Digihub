@@ -1,0 +1,185 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger: none
+#- main
+
+variables:
+  AgentImage: 'yocabe-buildagent-pool' #See available agent images: https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent
+  system.debug: false #Setting debug to true will add extra output to the logs but can be useful while trying to determine full reason for failures
+  BuildConfiguration: 'Release'
+  AppName: 'yocabe'
+  EnableSTGDeployment: 'false'
+
+stages:
+  - stage: 'Build_and_package_stage'
+    displayName: 'Build'
+    jobs:
+      - job: 'Build'
+        displayName: 'Build'
+        pool:
+          name: $(AgentImage)
+        steps:
+        - task: NodeTool@0
+          inputs:
+            versionSpec: '18.x'
+          displayName: 'Install Node.js'
+
+        - script: |
+            npm install
+          displayName: 'npm install and build'
+
+        - task: CopyFiles@2
+          displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)/Temp/'
+          inputs:
+            SourceFolder: '$(System.DefaultWorkingDirectory)/'
+            Contents: |
+              **/*
+              !.git/**/*
+              !.gitignore
+              !pipeline
+            TargetFolder: '$(Build.ArtifactStagingDirectory)/Temp/'
+
+        - task: ArchiveFiles@2
+          displayName: 'Archive files'
+          inputs:
+            rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/Temp/'
+            includeRootFolder: false
+            archiveFile: '$(Build.ArtifactStagingDirectory)/package/$(AppName)-$(Build.BuildId).zip'
+        
+        - publish: $(Build.ArtifactStagingDirectory)/package/
+          artifact: WebPackage
+  
+  - stage: QA
+    condition: succeeded()
+    dependsOn: Build_and_package_stage
+    jobs:
+      - deployment: 'QADeployment'
+        displayName: 'Deploy to QA'
+        variables:
+          ServerHostingPath: '/var/www/'
+          CodeDeployPath: 'demo1/public/'
+        environment: 
+          name: QA
+          resourceType: VirtualMachine
+        workspace:
+          clean: all
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: ExtractFiles@1
+                  displayName: 'Extract files'
+                  inputs:
+                    destinationFolder: $(ServerHostingPath)$(CodeDeployPath)
+                    archiveFilePatterns: |
+                      $(Pipeline.Workspace)/WebPackage/$(AppName)-$(Build.BuildId).zip
+                    cleanDestinationFolder: false
+                    overwriteExistingFiles: true
+                - script: |
+                    cp $(ServerHostingPath)$(CodeDeployPath)config/QA_CNF.env $(ServerHostingPath)$(CodeDeployPath)/.env
+                    pm2 stop app
+                    pm2 start app
+                    pm2 save
+                    pm2 list
+
+  - stage: STG
+    condition: and(succeeded(), eq(variables['EnableSTGDeployment'], 'true'))
+    dependsOn: Build_and_package_stage
+    jobs:
+      - deployment: 'STGDeployment'
+        displayName: 'Deploy to STG'
+        variables:
+          ServerHostingPath: '/var/www/'
+          CodeDeployPath: 'stgchannelsconnector/public/'
+        environment: 
+          name: STG
+          resourceType: VirtualMachine
+        workspace:
+          clean: all
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: ExtractFiles@1
+                  displayName: 'Extract files'
+                  inputs:
+                    destinationFolder: $(ServerHostingPath)$(CodeDeployPath)
+                    archiveFilePatterns: |
+                      $(Pipeline.Workspace)/WebPackage/$(AppName)-$(Build.BuildId).zip
+                    cleanDestinationFolder: false
+                    overwriteExistingFiles: true
+                - script: |
+                    cp $(ServerHostingPath)$(CodeDeployPath)config/UAT_CNF.env $(ServerHostingPath)$(CodeDeployPath)/.env
+                    pm2 stop stgapp
+                    #pm2 start stgapp
+                    pm2 save
+                    pm2 list
+
+  - stage: PRD
+    dependsOn: 
+    - Build_and_package_stage
+    - QA
+    jobs:
+      - deployment: 'PRDDeployment'
+        displayName: 'Deploy to PRD'
+        variables:
+          ServerHostingPath: '/var/www/'
+          CodeDeployPath: 'channelsconnector/public/'
+        environment: 
+          name: PRD
+          resourceType: VirtualMachine
+          resourceName: ip-172-31-5-145
+        workspace:
+          clean: all
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: ExtractFiles@1
+                  displayName: 'Extract files'
+                  inputs:
+                    destinationFolder: $(ServerHostingPath)$(CodeDeployPath)
+                    archiveFilePatterns: |
+                      $(Pipeline.Workspace)/WebPackage/$(AppName)-$(Build.BuildId).zip
+                    cleanDestinationFolder: false
+                    overwriteExistingFiles: true
+                - script: |
+                    cp $(ServerHostingPath)$(CodeDeployPath)config/PROD-V2_CNF.env $(ServerHostingPath)$(CodeDeployPath)/.env
+                    pm2 restart prdapp --update-env
+                    pm2 save
+
+  - stage: PRD2
+    dependsOn: 
+    - Build_and_package_stage
+    - QA
+    jobs:
+      - deployment: 'PRDDeployment'
+        displayName: 'Deploy to PRD2'
+        variables:
+          ServerHostingPath: '/var/www/'
+          CodeDeployPath: 'channelsconnector/public/'
+        environment: 
+          name: PRD2
+          resourceType: VirtualMachine
+          tags: PRD2
+        workspace:
+          clean: all
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: ExtractFiles@1
+                  displayName: 'Extract files'
+                  inputs:
+                    destinationFolder: $(ServerHostingPath)$(CodeDeployPath)
+                    archiveFilePatterns: |
+                      $(Pipeline.Workspace)/WebPackage/$(AppName)-$(Build.BuildId).zip
+                    cleanDestinationFolder: false
+                    overwriteExistingFiles: true
+                - script: |
+                    cp $(ServerHostingPath)$(CodeDeployPath)config/PROD2-V2_CNF.env $(ServerHostingPath)$(CodeDeployPath)/.env
+                    pm2 restart prdapp --update-env
+                    pm2 save

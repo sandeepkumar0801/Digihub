@@ -1,0 +1,370 @@
+ .page-content {
+     max-width: 100%;
+     margin: 45px auto;
+     margin-left: 270px;
+     padding: 20px;
+ }
+
+ .header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 20px;
+ }
+
+ .back-button,
+ .save-button {
+     background-color: #007bff;
+     color: #fff;
+     border: none;
+     border-radius: 5px;
+     padding: 10px;
+     cursor: pointer;
+ }
+
+ .media,
+ .title-description,
+ .description,
+ .inventory,
+ .variants,
+ .organize-classify,
+ .weight-dimensions {
+     margin-bottom: 30px;
+ }
+
+ .add-variant-button {
+     margin-bottom: 10px;
+ }
+
+ .add-variant-button button {
+     background-color: #28a745;
+     color: #fff;
+     border: none;
+     border-radius: 5px;
+     padding: 10px 20px;
+     cursor: pointer;
+ }
+
+ /* .variant-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.variant-table th,
+.variant-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+} */
+ .variant-dialog {
+     border: 1px solid #ddd;
+     padding: 20px;
+     border-radius: 5px;
+     background-color: #f9f9f9;
+ }
+
+ .variant-dialog input[type="text"] {
+     width: calc(100% - 80px);
+     margin-bottom: 10px;
+     padding: 8px;
+ }
+
+ .variant-dialog button {
+     background-color: #007bff;
+     color: #fff;
+     border: none;
+     border-radius: 5px;
+     padding: 10px 20px;
+     cursor: pointer;
+     margin-right: 10px;
+ }
+
+ .variant-dialog ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .variant-dialog ul li {
+     cursor: pointer;
+     padding: 5px 0;
+ }
+
+ .variant-dialog ul li:hover {
+     background-color: #f0f0f0;
+ }
+
+ .media-box {
+     border: 2px dashed #ccc;
+     padding: 20px;
+     text-align: center;
+     margin-bottom: 20px;
+ }
+
+ .media-box button {
+     margin-top: 10px;
+     background-color: #007bff;
+     color: #fff;
+     border: none;
+     border-radius: 5px;
+     padding: 10px 20px;
+     cursor: pointer;
+ }
+
+ /* .title-input {
+     width: 100%;
+     padding: 10px;
+     font-size: 16px;
+ } */
+
+ /* .description-input {
+     width: 100%;
+     padding: 10px;
+     height: 150px;
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 14px;
+     line-height: 1.5;
+     border: 1px solid #ddd;
+     border-radius: 5px;
+     resize: vertical;
+ } */
+
+ .inventory {
+     background-color: white;
+     border: 1px solid #f0ecec;
+     padding: 20px;
+     border-radius: 5px;
+ }
+
+ .inventory h4 {
+     color: #333;
+     font-size: 24px;
+     margin-bottom: 15px;
+ }
+
+ .inventory-row {
+     display: flex;
+     flex-wrap: wrap;
+     margin-bottom: 15px;
+ }
+
+ .inventory-item {
+     flex: 1;
+     margin-right: 15px;
+     margin-bottom: 15px;
+ }
+
+ .inventory-item:last-child {
+     margin-right: 0;
+ }
+
+ .inventory-item label {
+     color: #555;
+     font-size: 18px;
+     margin-bottom: 5px;
+     display: block;
+ }
+
+ .inventory-item input {
+     width: 100%;
+     padding: 10px;
+     font-size: 16px;
+     border: 1px solid #ccc;
+     border-radius: 3px;
+     transition: border-color 0.3s ease-in-out;
+ }
+
+ .inventory-item input:focus {
+     outline: none;
+     border-color: #007bff;
+     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+ }
+
+ .inventory-item input:hover {
+     border-color: #999;
+ }
+
+ .inventory-item input::placeholder {
+     color: #999;
+ }
+
+ .submit-button {
+     background-color: #007bff;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     font-size: 18px;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease-in-out;
+ }
+
+ .submit-button:hover {
+     background-color: #0056b3;
+ }
+
+ .variants-container {
+     text-align: center;
+     margin-top: 20px;
+ }
+
+ .variant-box {
+     width: 200px;
+     height: 200px;
+     border: 1px dashed #ccc;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     margin: 0 auto;
+ }
+
+ .add-variant-button {
+     background-color: transparent;
+     border: none;
+     cursor: pointer;
+ }
+
+ .dialog-content {
+     width: 100%;
+     max-width: 600px;
+     padding: 20px;
+ }
+
+ .option-fields {
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 20px;
+ }
+
+ .option-fields>label {
+     margin-bottom: 5px;
+     font-weight: bold;
+ }
+
+ .note {
+     font-size: 14px;
+     margin-bottom: 20px;
+ }
+
+ .p-float-label {
+     margin-bottom: 20px;
+ }
+
+ .p-float-label .p-inputtext {
+     width: 100%;
+ }
+
+ .p-dialog-content {
+     padding: 0;
+ }
+
+ .add-option-container {
+     display: flex;
+     flex-direction: column;
+     margin-top: 20px;
+     box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
+
+ }
+
+ .add-option-container>label {
+     margin-bottom: 5px;
+     font-weight: bold;
+ }
+
+ .title-description,
+ .media,
+ .organize-and-classify,
+ .weight-and-dimensions {
+     background-color: white;
+     border: 1.5px solid #f0ecec;
+     padding: 20px;
+     border-radius: 5px;
+     margin-bottom: 20px;
+ }
+
+ .row {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 10px;
+ }
+
+ .column {
+     flex: 1;
+     margin-right: 10px;
+ }
+
+ .dimensions-input {
+     display: flex;
+ }
+
+ .dimensions-input input {
+     flex: 1;
+     margin-right: 5px;
+ }
+
+ 
+ .manage-icon-button {
+    margin-left: 20px; /* Adjust margin as needed */
+}
+
+
+ .dialog-content {
+    padding: 20px;
+}
+
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    margin: 0;
+}
+
+.cancel-button {
+    color: #999;
+}
+
+.current-variants {
+    margin-bottom: 20px;
+}
+
+.option-card {
+    margin-bottom: 20px;
+}
+
+.option-name {
+    display: flex;
+    align-items: center;
+}
+
+.delete-option-button,
+.delete-value-button,
+.add-value-button {
+    margin-left: 10px;
+}
+
+/* Increase the length of TextField */
+.MuiInputBase-input {
+    width: 92%; /* Adjust width as needed */
+}
+
+/* Add color for delete icon */
+.delete-icon {
+    color: #f44336; /* Red color */
+}
+
+.center-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}

@@ -1,0 +1,66 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #2c3e50;
+    color: black(71, 58, 107);
+    /* Change text color to a lighter shade for better visibility */
+    padding-top: 20px;
+    overflow-y: auto;
+    /* Add scroll if content overflows */
+    border-right: 1px solid #ddd;
+    /* Add border for separation */
+
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    margin-left: 10px;
+    font-size: 1.5rem;
+}
+
+.sidebar-menu {
+    margin-top: 50px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 6px 0;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    /* Align items vertically */
+    align-items: center;
+    /* Center items vertically */
+    text-decoration: none;
+    color: black;
+    /* Change text color */
+    padding: 6px 20px;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background-color: rgb(209, 218, 230);
+}
+
+.sidebar-menu a:hover {
+    transition: background-color 0.3s;
+}
+
+.sidebar-menu li a ion-icon {
+    margin-right: 10px;
+}
+
+.active ion-icon {
+    color: #3498db;
+    /* Highlight the active icon with a different color */
+}

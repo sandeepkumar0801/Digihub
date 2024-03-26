@@ -1,0 +1,45 @@
+/* ProductPage.css */
+
+.product-page {
+    display: flex;
+    margin-left: 255px;
+    margin-top: 40px;
+    background: var(--surface-card);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-body {
+    display: flex;
+}
+
+.filters {
+    width: 250px;
+    margin-right: 20px;
+}
+
+.product-list {
+    flex: 1;
+}
+
+
+  
