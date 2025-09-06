@@ -111,7 +111,7 @@ The DigiHub system serves as a comprehensive solution that:
 - **Bidirectional Data Synchronization**: Real-time synchronization of products, orders, and inventory between e-commerce platforms and internal systems
 - **Multi-Channel Management**: Unified management of multiple e-commerce channels (Shopify, WooCommerce, Amazon, eBay, etc.) from a single interface
 - **Logistics Orchestration**: Complete order fulfillment workflow from creation to delivery tracking
-- **Carrier Integration**: Seamless integration with multiple shipping providers (Shipxbox, Bluedart, DTDC, Delhivery)
+- **Carrier Integration**: Seamless integration with multiple shipping providers (Digihub, Bluedart, DTDC, Delhivery)
 - **Real-time Visibility**: End-to-end tracking and monitoring of orders and shipments
 
 #### **Core Value Proposition:**
@@ -210,7 +210,7 @@ The DigiHub system serves as a comprehensive solution that:
 - **🚀 Upcoming**: Zoho CRM integration for advanced customer relationship management (Indian market focus)
 
 #### **Logistics & Fulfillment Management**
-- **Shipping Providers**: 4+ integrated carriers (Shipxbox, Bluedart, DTDC, Delhivery)
+- **Shipping Providers**: 4+ integrated carriers (Digihub, Bluedart, DTDC, Delhivery)
 - **Workflow Automation**: 4-step shipping process with validation
 - **Tracking Capabilities**: Real-time 5-stage tracking timeline
 - **Exception Handling**: COD, RTO, NDR management with resolution workflows
@@ -306,8 +306,8 @@ graph TB
         E4[Audit & Logging DB<br/>System Tracking]
     end
 
-    subgraph "External Shipping Providers"
-        F1[Shipxbox API<br/>Internal Shipping]
+    subgraph "Shipping Providers"
+        F1[Digihub System<br/>In-House Logistics]
         F2[Bluedart API<br/>Express Delivery]
         F3[DTDC API<br/>Surface Transport]
         F4[Delhivery API<br/>Pan-India Network]
@@ -493,7 +493,7 @@ graph LR
 | **E-commerce** | ![PrestaShop](https://img.shields.io/badge/PrestaShop-DF0067?style=for-the-badge&logo=prestashop&logoColor=white) | Web Service | E-commerce platform | ✅ **Integrated** |
 | **Marketplace** | ![Mirakl](https://img.shields.io/badge/Mirakl-FF6B35?style=for-the-badge&logo=marketplace&logoColor=white) | API v1 | Marketplace platform | ✅ **Integrated** |
 | **🚀Upcoming** | ![Flipkart](https://img.shields.io/badge/Flipkart-FF6600?style=for-the-badge&logo=flipkart&logoColor=white) | Seller API | Indian marketplace | 
-| **🚀Upcoming** | ![Zoho](https://img.shields.io/badge/Zoho_CRM-C8102E?style=for-the-badge&logo=zoho&logoColor=white) | API v2 | Customer relationship | 
+| **🚀Upcoming** | ![Zoho](https://img.shields.io/badge/Zoho_CRM-C8102E?style=for-the-badge&logo=zoho&logoColor=white) | API v2 | Invoicing and Accounts | 
 
 ### **Shipping & Logistics APIs**
 
@@ -501,7 +501,7 @@ graph LR
 
 | **Category** | **Technology** | **Version** | **Purpose** | **Coverage** |
 |--------------|----------------|-------------|-------------|--------------|
-| **Shipping Aggregator** | ![Shipxbox](https://img.shields.io/badge/Shipxbox-FF6B35?style=for-the-badge&logo=truck&logoColor=white) | API v1 | Multi-carrier shipping | Pan-India logistics aggregation |
+| **In-House System** | ![Digihub](https://img.shields.io/badge/Digihub-FF6B35?style=for-the-badge&logo=truck&logoColor=white) | Internal v1 | DigiHub's proprietary logistics | In-house logistics management system |
 | **Express Delivery** | ![Bluedart](https://img.shields.io/badge/Bluedart-0066CC?style=for-the-badge&logo=truck&logoColor=white) | API v2 | Express logistics | Premium delivery services |
 | **Logistics Provider** | ![DTDC](https://img.shields.io/badge/DTDC-FF0000?style=for-the-badge&logo=truck&logoColor=white) | API v1 | Courier services | Domestic & international shipping |
 
@@ -591,12 +591,12 @@ graph TD
 ```mermaid
 graph TD
     A[Logistics System] --> B[Shipping Service Factory]
-    B --> C[Shipxbox Service]
+    B --> C[Digihub Service]
     B --> D[Bluedart Service]
     B --> E[DTDC Service]
     B --> F[Delhivery Service]
 
-    C --> G[Shipxbox API]
+    C --> G[Digihub API]
     D --> H[Bluedart Transportation API]
     E --> I[DTDC Integration API]
     F --> J[Delhivery API]
@@ -874,7 +874,7 @@ src/
 - **Performance Metrics**: Track carrier performance and reliability
 
 **Supported Carriers:**
-- **Shipxbox**: Internal shipping solution with competitive rates
+- **Digihub**: DigiHub's proprietary in-house logistics management system
 - **Bluedart**: Express delivery with air and surface options
 - **DTDC**: Comprehensive logistics with B2B and B2C services
 - **Delhivery**: Pan-India network with technology integration
@@ -1193,7 +1193,7 @@ graph TD
 - **Selection Interface**: Easy carrier selection and confirmation
 
 **Shipping Provider Integration:**
-- **Multi-Carrier Support**: Integration with Shipxbox, Bluedart, DTDC, Delhivery
+- **Multi-Carrier Support**: Integration with Digihub, Bluedart, DTDC, Delhivery
 - **Real-time Rates**: Live rate calculation from carrier APIs
 - **Service Comparison**: Delivery time and service feature comparison
 - **Cost Optimization**: Automatic selection of most cost-effective option
@@ -2341,7 +2341,7 @@ graph TD
     end
 
     subgraph "Carrier Integrations"
-        F1[Shipxbox API<br/>₹60 Base Rate]
+        F1[Digihub API<br/>₹60 Base Rate]
         F2[Bluedart API<br/>Express Delivery]
         F3[DTDC API<br/>Surface Transport]
         F4[Delhivery API<br/>Pan-India Network]
@@ -2380,7 +2380,7 @@ graph TD
 
 ### Carrier-Specific Integrations
 
-#### **Shipxbox Integration (Internal Shipping Solution)**
+#### **Digihub Integration (DigiHub's In-House Logistics System)**
 
 ![Carrier Selection Interface](rest%205/Screenshot%202025-01-20%20154215.png)
 
@@ -2486,7 +2486,7 @@ Value-based Selection:
 ![Carrier Rate Comparison](rest%205/Screenshot%202025-01-20%20154215.png)
 
 **Real-time Rate Calculation:**
-- **Shipxbox**: ₹60 shipping, ₹60 total (Selected for cost optimization)
+- **Digihub**: ₹60 shipping, ₹60 total (DigiHub's in-house system - cost optimized)
 - **DTDC**: ₹81 shipping, ₹81 total (Balanced cost and service)
 - **Bluedart**: ₹85.8 shipping, ₹85.8 total (Premium express service)
 
@@ -2561,7 +2561,7 @@ The DigiHub system provides a sophisticated real-time tracking system that aggre
 ```mermaid
 graph TD
     subgraph "Carrier Systems"
-        A1[Shipxbox Tracking<br/>Internal System]
+        A1[Digihub Tracking<br/>Internal System]
         A2[Bluedart Tracking<br/>Transportation API]
         A3[DTDC Tracking<br/>Tracking API]
         A4[Delhivery Tracking<br/>Status API]
@@ -2627,7 +2627,7 @@ Event Details:
 #### **Status Normalization**
 
 **Carrier-Specific Status Mapping:**
-- **Shipxbox Status** → **DigiHub Standard Status**
+- **Digihub Status** → **DigiHub Standard Status**
 - **Bluedart Status** → **DigiHub Standard Status**
 - **DTDC Status** → **DigiHub Standard Status**
 - **Delhivery Status** → **DigiHub Standard Status**
@@ -5685,7 +5685,7 @@ The DigiHub ChannelConnector & Logistics Management System represents a comprehe
 
 **✅ Multi-Channel Integration Excellence**
 - **8+ E-commerce Platforms**: Shopify, WooCommerce, Amazon, eBay, Mirakl, PrestaShop, Magento, and custom integrations
-- **4 Shipping Carriers**: Shipxbox, Bluedart, DTDC, and Delhivery with rate optimization
+- **4 Shipping Carriers**: Digihub, Bluedart, DTDC, and Delhivery with rate optimization
 - **Real-time Synchronization**: Bidirectional data sync across all channels
 - **Unified Management**: Single dashboard for multi-channel operations
 
