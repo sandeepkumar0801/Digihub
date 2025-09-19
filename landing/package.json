@@ -1,0 +1,23 @@
+{
+  "name": "digihub-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "DigiHub ChannelConnector & Logistics Management System Landing Page",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "nuxt": "^3.13.0"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@vueuse/nuxt": "^11.1.0",
+    "@nuxt/icon": "^1.5.4"
+  }
+}
