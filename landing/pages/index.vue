@@ -1103,19 +1103,28 @@
         
         <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-gray-100 rounded-2xl p-8 aspect-video flex items-center justify-center">
-            <div class="text-center">
-              <Icon name="heroicons:computer-desktop" class="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 class="text-xl font-semibold text-gray-600 mb-2">DigiHub Frontend</h3>
-              <p class="text-gray-500">Multi-channel dashboard screenshot placeholder</p>
-            </div>
-          </div>
+  <div class="text-center">
+    <img 
+      src="/connectorDashboard.png" 
+      alt="DigiHub Frontend Screenshot"
+      class="max-h-full max-w-full object-contain rounded-lg"
+    />
+        <p class="text-gray-500 text-sm mt-5">Connector Dashboard</p>
+  </div>
+  
+</div>
+
           
           <div class="bg-gray-100 rounded-2xl p-8 aspect-video flex items-center justify-center">
             <div class="text-center">
-              <Icon name="heroicons:truck" class="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 class="text-xl font-semibold text-gray-600 mb-2">Logistics Dashboard</h3>
-              <p class="text-gray-500">Order tracking and fulfillment screenshot placeholder</p>
-            </div>
+    <img 
+      src="/shipdashboard.png" 
+      alt="Shipping Dashnoard"
+      class="max-h-full max-w-full object-contain rounded-lg"
+    />
+    <p class="text-gray-500 text-sm mt-5">Shipping Dashboard</p>
+  </div>
+           
           </div>
         </div>
       </div>
