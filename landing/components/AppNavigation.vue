@@ -55,7 +55,9 @@
         <div class="hidden md:flex items-center space-x-4">
           
           <button class="btn-primary text-sm py-2 px-6">
+            <NuxtLink to="/contact" class="text-white-700 hover:text-blue-600 font-medium transition-colors">
             Get Started
+          </NuxtLink>
           </button>
         </div>
 

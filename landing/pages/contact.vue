@@ -175,7 +175,7 @@
                     <h3 class="font-semibold text-gray-900 mb-1">Email Us</h3>
                     <p class="text-gray-600 mb-2">Get in touch via email</p>
                     <a href="mailto:hello@digihub.com" class="text-blue-600 hover:text-blue-700 font-medium">
-                      hello@digihub.com
+                      info@digispin.tech
                     </a>
                   </div>
                 </div>
@@ -190,7 +190,7 @@
                     <h3 class="font-semibold text-gray-900 mb-1">Call Us</h3>
                     <p class="text-gray-600 mb-2">Speak with our team</p>
                     <a href="tel:+1-555-123-4567" class="text-green-600 hover:text-green-700 font-medium">
-                      +1 (555) 123-4567
+                      +91 99909 27442 
                     </a>
                   </div>
                 </div>
@@ -205,9 +205,9 @@
                     <h3 class="font-semibold text-gray-900 mb-1">Visit Us</h3>
                     <p class="text-gray-600 mb-2">Our headquarters</p>
                     <p class="text-purple-600 font-medium">
-                      123 Tech Street<br>
-                      San Francisco, CA 94105<br>
-                      United States
+                      A1-4, Sector 55<br>
+                      Gurugram, Haryana 122001<br>
+                      India
                     </p>
                   </div>
                 </div>
@@ -235,11 +235,11 @@
               <div class="space-y-2 text-sm">
                 <div class="flex justify-between">
                   <span class="text-gray-600">Monday - Friday</span>
-                  <span class="font-medium">9:00 AM - 6:00 PM PST</span>
+                  <span class="font-medium">9:00 AM - 6:00 PM IST</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Saturday</span>
-                  <span class="font-medium">10:00 AM - 4:00 PM PST</span>
+                  <span class="font-medium">10:00 AM - 4:00 PM IST</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Sunday</span>
