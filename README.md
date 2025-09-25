@@ -194,40 +194,40 @@ graph TD
 
     WW --> XX[Order-to-Cash Complete]
 
-    style I fill:#90EE90
-    style J fill:#90EE90
-    style K fill:#90EE90
-    style L fill:#90EE90
-    style O fill:#90EE90
-    style R fill:#90EE90
-    style U fill:#90EE90
-    style V fill:#90EE90
-    style W fill:#90EE90
-    style T fill:#90EE90
-    style Z fill:#87CEEB
-    style AA fill:#87CEEB
-    style BB fill:#87CEEB
-    style CC fill:#87CEEB
-    style DD fill:#87CEEB
-    style EE fill:#87CEEB
-    style FF fill:#87CEEB
-    style GG fill:#87CEEB
-    style HH fill:#90EE90
-    style II fill:#90EE90
-    style JJ fill:#90EE90
-    style KK fill:#90EE90
-    style LL fill:#90EE90
-    style MM fill:#90EE90
-    style NN fill:#87CEEB
-    style OO fill:#87CEEB
-    style PP fill:#87CEEB
-    style QQ fill:#90EE90
-    style RR fill:#90EE90
-    style SS fill:#90EE90
-    style TT fill:#90EE90
-    style UU fill:#90EE90
-    style VV fill:#90EE90
-    style WW fill:#87CEEB
+    style I fill:#e8f5e8,color:#2e7d32
+    style J fill:#e8f5e8,color:#2e7d32
+    style K fill:#e8f5e8,color:#2e7d32
+    style L fill:#e8f5e8,color:#2e7d32
+    style O fill:#e8f5e8,color:#2e7d32
+    style R fill:#e8f5e8,color:#2e7d32
+    style U fill:#e8f5e8,color:#2e7d32
+    style V fill:#e8f5e8,color:#2e7d32
+    style W fill:#e8f5e8,color:#2e7d32
+    style T fill:#e8f5e8,color:#2e7d32
+    style Z fill:#e3f2fd,color:#1565c0
+    style AA fill:#e3f2fd,color:#1565c0
+    style BB fill:#e3f2fd,color:#1565c0
+    style CC fill:#e3f2fd,color:#1565c0
+    style DD fill:#e3f2fd,color:#1565c0
+    style EE fill:#e3f2fd,color:#1565c0
+    style FF fill:#e3f2fd,color:#1565c0
+    style GG fill:#e3f2fd,color:#1565c0
+    style HH fill:#e8f5e8,color:#2e7d32
+    style II fill:#e8f5e8,color:#2e7d32
+    style JJ fill:#e8f5e8,color:#2e7d32
+    style KK fill:#e8f5e8,color:#2e7d32
+    style LL fill:#e8f5e8,color:#2e7d32
+    style MM fill:#e8f5e8,color:#2e7d32
+    style NN fill:#e3f2fd,color:#1565c0
+    style OO fill:#e3f2fd,color:#1565c0
+    style PP fill:#e3f2fd,color:#1565c0
+    style QQ fill:#e8f5e8,color:#2e7d32
+    style RR fill:#e8f5e8,color:#2e7d32
+    style SS fill:#e8f5e8,color:#2e7d32
+    style TT fill:#e8f5e8,color:#2e7d32
+    style UU fill:#e8f5e8,color:#2e7d32
+    style VV fill:#e8f5e8,color:#2e7d32
+    style WW fill:#e3f2fd,color:#1565c0
 ```
 
 **Workflow Legend:**
@@ -515,12 +515,12 @@ graph TB
     G4 --> D1
 
     %% Styling
-    style B1 fill:#e3f2fd
-    style B2 fill:#f3e5f5
-    style D1 fill:#e8f5e8
-    style E1 fill:#fff3e0
-    style F1 fill:#c8e6c9
-    style G1 fill:#ffebee
+    style B1 fill:#e3f2fd,color:#1565c0
+    style B2 fill:#f3e5f5,color:#7b1fa2
+    style D1 fill:#e8f5e8,color:#2e7d32
+    style E1 fill:#fff3e0,color:#e65100
+    style F1 fill:#c8e6c9,color:#2e7d32
+    style G1 fill:#ffebee,color:#c62828
 ```
 
 ## 2.2 Component Relationships & Data Flow
@@ -557,10 +557,10 @@ graph LR
         N --> A
     end
 
-    style A fill:#ffebee
-    style G fill:#f3e5f5
-    style J fill:#e8f5e8
-    style M fill:#fff3e0
+    style A fill:#ffebee,color:#c62828
+    style G fill:#f3e5f5,color:#7b1fa2
+    style J fill:#e8f5e8,color:#2e7d32
+    style M fill:#fff3e0,color:#e65100
 ```
 
 ### Component Interaction Patterns
@@ -728,11 +728,11 @@ graph TD
     E --> I[Amazon SP-API]
     F --> J[eBay Trading API]
 
-    style B fill:#e3f2fd
-    style C fill:#f1f8e9
-    style D fill:#f1f8e9
-    style E fill:#f1f8e9
-    style F fill:#f1f8e9
+    style B fill:#e3f2fd,color:#1565c0
+    style C fill:#f1f8e9,color:#2e7d32
+    style D fill:#f1f8e9,color:#2e7d32
+    style E fill:#f1f8e9,color:#2e7d32
+    style F fill:#f1f8e9,color:#2e7d32
 ```
 
 #### **Shipping Provider Integration**
@@ -749,11 +749,11 @@ graph TD
     E --> I[DTDC Integration API]
     F --> J[Delhivery API]
 
-    style B fill:#fff3e0
-    style C fill:#c8e6c9
-    style D fill:#c8e6c9
-    style E fill:#c8e6c9
-    style F fill:#c8e6c9
+    style B fill:#fff3e0,color:#e65100
+    style C fill:#c8e6c9,color:#2e7d32
+    style D fill:#c8e6c9,color:#2e7d32
+    style E fill:#c8e6c9,color:#2e7d32
+    style F fill:#c8e6c9,color:#2e7d32
 ```
 
 [↑ Back to Index](#table-of-contents)
@@ -1930,7 +1930,7 @@ graph TD
     I <--> N
     J <--> O
 
-    style A fill:#ff9800
+    style A fill:#fff3e0,color:#e65100
     style G fill:#e3f2fd
     style I fill:#e8f5e8
     style L fill:#fff3e0
@@ -3224,23 +3224,23 @@ graph TD
     X --> Y[Customer Notification]
     Y --> Z[Refund Processing]
 
-    style E fill:#90EE90
-    style F fill:#90EE90
-    style H fill:#90EE90
-    style I fill:#90EE90
-    style K fill:#90EE90
-    style M fill:#90EE90
-    style N fill:#90EE90
-    style O fill:#90EE90
-    style P fill:#90EE90
-    style T fill:#90EE90
-    style X fill:#90EE90
-    style Y fill:#90EE90
-    style Z fill:#90EE90
-    style J fill:#FFE4B5
-    style S fill:#FFE4B5
-    style U fill:#FFE4B5
-    style V fill:#FFE4B5
+    style E fill:#e8f5e8,color:#2e7d32
+    style F fill:#e8f5e8,color:#2e7d32
+    style H fill:#e8f5e8,color:#2e7d32
+    style I fill:#e8f5e8,color:#2e7d32
+    style K fill:#e8f5e8,color:#2e7d32
+    style M fill:#e8f5e8,color:#2e7d32
+    style N fill:#e8f5e8,color:#2e7d32
+    style O fill:#e8f5e8,color:#2e7d32
+    style P fill:#e8f5e8,color:#2e7d32
+    style T fill:#e8f5e8,color:#2e7d32
+    style X fill:#e8f5e8,color:#2e7d32
+    style Y fill:#e8f5e8,color:#2e7d32
+    style Z fill:#e8f5e8,color:#2e7d32
+    style J fill:#fff3e0,color:#e65100
+    style S fill:#fff3e0,color:#e65100
+    style U fill:#fff3e0,color:#e65100
+    style V fill:#fff3e0,color:#e65100
 ```
 
 ### Advanced COD Collection & Settlement Workflow (3-5 Day Cycle)
@@ -3288,26 +3288,26 @@ graph TD
 
     CC --> DD[Settlement Complete]
 
-    style B fill:#90EE90
-    style C fill:#90EE90
-    style D fill:#90EE90
-    style F fill:#90EE90
-    style G fill:#90EE90
-    style L fill:#90EE90
-    style N fill:#90EE90
-    style O fill:#90EE90
-    style P fill:#90EE90
-    style R fill:#90EE90
-    style S fill:#90EE90
-    style T fill:#90EE90
-    style V fill:#90EE90
-    style W fill:#90EE90
-    style X fill:#90EE90
-    style Z fill:#90EE90
-    style AA fill:#90EE90
-    style BB fill:#90EE90
-    style CC fill:#90EE90
-    style H fill:#FFE4B5
+    style B fill:#e8f5e8,color:#2e7d32
+    style C fill:#e8f5e8,color:#2e7d32
+    style D fill:#e8f5e8,color:#2e7d32
+    style F fill:#e8f5e8,color:#2e7d32
+    style G fill:#e8f5e8,color:#2e7d32
+    style L fill:#e8f5e8,color:#2e7d32
+    style N fill:#e8f5e8,color:#2e7d32
+    style O fill:#e8f5e8,color:#2e7d32
+    style P fill:#e8f5e8,color:#2e7d32
+    style R fill:#e8f5e8,color:#2e7d32
+    style S fill:#e8f5e8,color:#2e7d32
+    style T fill:#e8f5e8,color:#2e7d32
+    style V fill:#e8f5e8,color:#2e7d32
+    style W fill:#e8f5e8,color:#2e7d32
+    style X fill:#e8f5e8,color:#2e7d32
+    style Z fill:#e8f5e8,color:#2e7d32
+    style AA fill:#e8f5e8,color:#2e7d32
+    style BB fill:#e8f5e8,color:#2e7d32
+    style CC fill:#e8f5e8,color:#2e7d32
+    style H fill:#fff3e0,color:#e65100
 ```
 
 ### Advanced Weight Dispute Resolution System
@@ -3354,28 +3354,28 @@ graph TD
 
     AA --> BB[Process Complete]
 
-    style B fill:#90EE90
-    style C fill:#90EE90
-    style F fill:#90EE90
-    style G fill:#90EE90
-    style H fill:#90EE90
-    style I fill:#90EE90
-    style J fill:#90EE90
-    style K fill:#90EE90
-    style L fill:#90EE90
-    style M fill:#90EE90
-    style O fill:#90EE90
-    style Q fill:#90EE90
-    style U fill:#90EE90
-    style V fill:#90EE90
-    style W fill:#90EE90
-    style X fill:#90EE90
-    style Y fill:#90EE90
-    style Z fill:#90EE90
-    style AA fill:#90EE90
-    style P fill:#FFE4B5
-    style R fill:#FFE4B5
-    style S fill:#FFE4B5
+    style B fill:#e8f5e8,color:#2e7d32
+    style C fill:#e8f5e8,color:#2e7d32
+    style F fill:#e8f5e8,color:#2e7d32
+    style G fill:#e8f5e8,color:#2e7d32
+    style H fill:#e8f5e8,color:#2e7d32
+    style I fill:#e8f5e8,color:#2e7d32
+    style J fill:#e8f5e8,color:#2e7d32
+    style K fill:#e8f5e8,color:#2e7d32
+    style L fill:#e8f5e8,color:#2e7d32
+    style M fill:#e8f5e8,color:#2e7d32
+    style O fill:#e8f5e8,color:#2e7d32
+    style Q fill:#e8f5e8,color:#2e7d32
+    style U fill:#e8f5e8,color:#2e7d32
+    style V fill:#e8f5e8,color:#2e7d32
+    style W fill:#e8f5e8,color:#2e7d32
+    style X fill:#e8f5e8,color:#2e7d32
+    style Y fill:#e8f5e8,color:#2e7d32
+    style Z fill:#e8f5e8,color:#2e7d32
+    style AA fill:#e8f5e8,color:#2e7d32
+    style P fill:#fff3e0,color:#e65100
+    style R fill:#fff3e0,color:#e65100
+    style S fill:#fff3e0,color:#e65100
 ```
 
 ### Comprehensive Return Management (RTO) Process
@@ -3423,30 +3423,30 @@ graph TD
     Z --> AA[Process Optimization]
     AA --> BB[Return Process Complete]
 
-    style C fill:#90EE90
-    style D fill:#90EE90
-    style E fill:#90EE90
-    style F fill:#90EE90
-    style G fill:#90EE90
-    style H fill:#90EE90
-    style I fill:#90EE90
-    style J fill:#90EE90
-    style K fill:#90EE90
-    style L fill:#90EE90
-    style M fill:#90EE90
-    style N fill:#90EE90
-    style P fill:#90EE90
-    style Q fill:#90EE90
-    style R fill:#90EE90
-    style S fill:#90EE90
-    style T fill:#90EE90
-    style U fill:#90EE90
-    style V fill:#90EE90
-    style W fill:#90EE90
-    style X fill:#90EE90
-    style Y fill:#90EE90
-    style Z fill:#FFE4B5
-    style AA fill:#FFE4B5
+    style C fill:#e8f5e8,color:#2e7d32
+    style D fill:#e8f5e8,color:#2e7d32
+    style E fill:#e8f5e8,color:#2e7d32
+    style F fill:#e8f5e8,color:#2e7d32
+    style G fill:#e8f5e8,color:#2e7d32
+    style H fill:#e8f5e8,color:#2e7d32
+    style I fill:#e8f5e8,color:#2e7d32
+    style J fill:#e8f5e8,color:#2e7d32
+    style K fill:#e8f5e8,color:#2e7d32
+    style L fill:#e8f5e8,color:#2e7d32
+    style M fill:#e8f5e8,color:#2e7d32
+    style N fill:#e8f5e8,color:#2e7d32
+    style P fill:#e8f5e8,color:#2e7d32
+    style Q fill:#e8f5e8,color:#2e7d32
+    style R fill:#e8f5e8,color:#2e7d32
+    style S fill:#e8f5e8,color:#2e7d32
+    style T fill:#e8f5e8,color:#2e7d32
+    style U fill:#e8f5e8,color:#2e7d32
+    style V fill:#e8f5e8,color:#2e7d32
+    style W fill:#e8f5e8,color:#2e7d32
+    style X fill:#e8f5e8,color:#2e7d32
+    style Y fill:#e8f5e8,color:#2e7d32
+    style Z fill:#fff3e0,color:#e65100
+    style AA fill:#fff3e0,color:#e65100
 ```
 
 **Advanced Workflow Legend:**
@@ -5186,9 +5186,9 @@ graph TD
 
     E --> I
 
-    style A fill:#ff6b6b
-    style B fill:#ffa726
-    style C fill:#66bb6a
+    style A fill:#ffebee,color:#c62828
+    style B fill:#fff3e0,color:#e65100
+    style C fill:#e8f5e8,color:#2e7d32
     style D fill:#42a5f5
     style E fill:#ab47bc
 ```
@@ -5425,9 +5425,9 @@ graph TD
     B3 --> C3
     B4 --> C4
 
-    style A1 fill:#ff6b6b
-    style B1 fill:#ffa726
-    style C1 fill:#66bb6a
+    style A1 fill:#ffebee,color:#c62828
+    style B1 fill:#fff3e0,color:#e65100
+    style C1 fill:#e8f5e8,color:#2e7d32
 ```
 
 ## 9.4 Access Control Patterns
