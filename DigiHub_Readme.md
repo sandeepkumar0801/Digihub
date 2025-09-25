@@ -113,29 +113,138 @@ DigiHub ChannelConnector operates as a **unified e-commerce integration and logi
 
 ```mermaid
 graph TD
-    A[Offline Business] --> B[DigiHub Onboarding]
-    B --> C[Multi-Channel Setup]
-    C --> D[Product Catalog Creation]
-    D --> E[Inventory Synchronization]
-    E --> F[Order Processing]
-    F --> G[Automated Fulfillment]
-    G --> H[Customer Delivery]
-    H --> I[Financial Reconciliation]
+    A[Traditional Offline Business] --> B[DigiHub Platform Assessment]
+    B --> C[Business Requirements Analysis]
+    C --> D[Multi-Channel Strategy Planning]
+
+    D --> E[E-commerce Platform Integration]
+    E --> F[Shopify Store Setup]
+    E --> G[Amazon Seller Central]
+    E --> H[WooCommerce Configuration]
+    E --> I[eBay Store Integration]
+
+    F --> J[Product Catalog Creation]
+    G --> J
+    H --> J
+    I --> J
+
+    J --> K[Product Data Standardization]
+    K --> L[Inventory Management Setup]
+    L --> M[Multi-Channel Inventory Sync]
+
+    M --> N[Order Processing Automation]
+    N --> O[Payment Gateway Integration]
+    O --> P[Order Validation System]
+    P --> Q[Inventory Allocation]
+
+    Q --> R[Shipping Provider Integration]
+    R --> S[Carrier Rate Comparison]
+    S --> T[Automated Label Generation]
+    T --> U[Tracking System Setup]
+
+    U --> V[Customer Communication]
+    V --> W[Delivery Confirmation]
+    W --> X[Payment Settlement]
+    X --> Y[Zoho Books Integration]
+
+    Y --> Z[Financial Reconciliation]
+    Z --> AA[Business Analytics]
+    AA --> BB[Performance Optimization]
+    BB --> CC[Scalable Growth]
+
+    classDef startEnd fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef platform fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef process fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef integration fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef financial fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+
+    class A,CC startEnd
+    class F,G,H,I platform
+    class J,K,L,M,N,O,P,Q process
+    class R,S,T,U,V,W integration
+    class X,Y,Z,AA,BB financial
 ```
 
 #### **Secondary Business Flow: Order-to-Cash Automation**
 
 ```mermaid
-graph LR
-    A[Multi-Channel Orders] --> B[Order Validation]
-    B --> C[Inventory Check]
-    C --> D[Logistics Assignment]
-    D --> E[Carrier Selection]
-    E --> F[Shipment Creation]
-    F --> G[Tracking Updates]
-    G --> H[Delivery Confirmation]
-    H --> I[Payment Processing]
-    I --> J[Financial Reporting]
+graph TD
+    A[Multi-Channel Order Received] --> B[Platform Source Identification]
+    B --> C{Order Source}
+
+    C -->|Shopify| D[Shopify Order Processing]
+    C -->|Amazon| E[Amazon SP-API Processing]
+    C -->|WooCommerce| F[WooCommerce API Processing]
+    C -->|eBay| G[eBay Trading API Processing]
+
+    D --> H[Order Data Standardization]
+    E --> H
+    F --> H
+    G --> H
+
+    H --> I[Customer Data Validation]
+    I --> J[Address Verification]
+    J --> K[Payment Method Analysis]
+
+    K --> L{Payment Type}
+    L -->|Prepaid| M[Payment Confirmation]
+    L -->|COD| N[COD Risk Assessment]
+
+    N --> O[Postal Code Validation]
+    O --> P[Customer Risk Scoring]
+    P --> Q{Risk Level}
+
+    Q -->|Low Risk| M
+    Q -->|High Risk| R[Enhanced Verification]
+    R --> M
+
+    M --> S[Inventory Availability Check]
+    S --> T{Stock Available}
+
+    T -->|Yes| U[Inventory Allocation]
+    T -->|No| V[Backorder Processing]
+
+    U --> W[Shipping Cost Calculation]
+    V --> W
+
+    W --> X[Multi-Carrier Rate Comparison]
+    X --> Y[Optimal Carrier Selection]
+    Y --> Z[Shipping Label Generation]
+
+    Z --> AA[Order Fulfillment]
+    AA --> BB[Real-time Tracking Updates]
+    BB --> CC[Customer Notifications]
+
+    CC --> DD[Delivery Attempt]
+    DD --> EE{Delivery Successful}
+
+    EE -->|Yes| FF[Delivery Confirmation]
+    EE -->|No| GG[NDR Processing]
+
+    GG --> HH[Reattempt Scheduling]
+    HH --> DD
+
+    FF --> II[Payment Settlement]
+    II --> JJ[Zoho Books Integration]
+    JJ --> KK[Invoice Generation]
+    KK --> LL[Financial Reconciliation]
+    LL --> MM[Order-to-Cash Complete]
+
+    classDef startEnd fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef platform fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef process fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef decision fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef risk fill:#fff8e1,stroke:#f57f17,stroke-width:2px,color:#e65100
+    classDef shipping fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef financial fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+
+    class A,MM startEnd
+    class D,E,F,G platform
+    class H,I,J,K,S,U,V,AA,BB,CC process
+    class C,L,Q,T,EE decision
+    class N,O,P,R risk
+    class W,X,Y,Z,DD,GG,HH shipping
+    class M,FF,II,JJ,KK,LL financial
 ```
 
 ### Advanced Operational Workflow Diagrams
@@ -216,7 +325,23 @@ graph TD
 
     WW --> XX[Order-to-Cash Complete]
 
+    classDef startEnd fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef platform fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef process fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef decision fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef zoho fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+    classDef shipping fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef payment fill:#fff8e1,stroke:#f57f17,stroke-width:2px,color:#e65100
+    classDef notification fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px,color:#1a237e
 
+    class A,XX startEnd
+    class C,D,E,F,G,H platform
+    class I,J,K,O,QQ process
+    class B,M,S,X decision
+    class Z,AA,BB,CC,DD,EE,FF,GG,NN,OO,PP,VV,WW zoho
+    class KK,LL,MM,RR,TT shipping
+    class R,T,U,V,W,UU payment
+    class N,P,Q,SS,Y notification
 ```
 
 **Workflow Legend:**
@@ -806,7 +931,21 @@ graph TD
     X --> Y[Customer Notification]
     Y --> Z[Refund Processing]
 
+    classDef success fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef process fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef decision fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef communication fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef escalation fill:#fff8e1,stroke:#f57f17,stroke-width:2px,color:#e65100
+    classDef return fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef notification fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px,color:#1a237e
 
+    class C success
+    class A,D,E,F,M,N,O,P process
+    class B,G,L,Q,R,W decision
+    class H,I,J,K communication
+    class S,U,V escalation
+    class T,X,Z return
+    class Y notification
 ```
 
 ### Advanced COD Collection & Settlement Workflow (3-5 Day Cycle)
@@ -854,7 +993,23 @@ graph TD
 
     CC --> DD[Settlement Complete]
 
+    classDef startEnd fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef risk fill:#fff8e1,stroke:#f57f17,stroke-width:2px,color:#e65100
+    classDef decision fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef verification fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef timeline fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef documentation fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef financial fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+    classDef notification fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px,color:#1a237e
 
+    class A,DD startEnd
+    class B,C,D risk
+    class E,K decision
+    class F,G,H,L verification
+    class I,J,Q,U,Y timeline
+    class N,O,P documentation
+    class R,S,T,V,W,X,Z,AA,CC financial
+    class M,BB notification
 ```
 
 ### Advanced Weight Dispute Resolution System
@@ -901,7 +1056,23 @@ graph TD
 
     AA --> BB[Process Complete]
 
+    classDef startEnd fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef process fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef decision fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef evidence fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef ai fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef resolution fill:#fff8e1,stroke:#f57f17,stroke-width:2px,color:#e65100
+    classDef financial fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+    classDef notification fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px,color:#1a237e
 
+    class A,E,BB startEnd
+    class B,C,F,G process
+    class D,N,T decision
+    class H,I,J,L evidence
+    class K,M,P,R,S,AA ai
+    class O,Q,U,V,W resolution
+    class X financial
+    class Y,Z notification
 ```
 
 ### Comprehensive Return Management (RTO) Process
@@ -949,7 +1120,23 @@ graph TD
     Z --> AA[Process Optimization]
     AA --> BB[Return Process Complete]
 
+    classDef startEnd fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef process fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef decision fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef logistics fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef quality fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef financial fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+    classDef notification fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px,color:#1a237e
+    classDef analytics fill:#fff8e1,stroke:#f57f17,stroke-width:2px,color:#e65100
 
+    class A,BB startEnd
+    class C,D,E,F,G,H,K,L,M,N process
+    class B,O decision
+    class G,K,L,M,N logistics
+    class I,Q,R quality
+    class J,P,S,T,W,X financial
+    class U,V notification
+    class Y,Z,AA analytics
 ```
 
 **Advanced Workflow Legend:**

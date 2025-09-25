@@ -179,6 +179,70 @@
 
 ---
 
+## Diagram Index
+
+### System Architecture Diagrams
+1. [Complete Order-to-Zoho Integration Workflow](#complete-order-to-zoho-integration-workflow) - End-to-end order processing flow
+2. [Comprehensive System Architecture](#comprehensive-system-architecture) - High-level system overview
+3. [Data Flow Architecture](#data-flow-architecture) - Real-time data synchronization
+4. [Multi-Channel Integration Architecture](#unified-integration-architecture) - Platform integration patterns
+
+### Integration Diagrams
+5. [E-commerce Platform Integration](#e-commerce-platform-integration) - Channel connector patterns
+6. [Shipping Provider Integration](#shipping-provider-integration) - Carrier integration flow
+7. [Shopify Integration Architecture](#integration-architecture) - Shopify-specific workflow
+8. [Shopify Data Synchronization](#data-synchronization-flow) - Real-time sync sequence
+9. [WooCommerce Integration Architecture](#woocommerce-integration-architecture) - WooCommerce workflow
+10. [WooCommerce Data Synchronization](#data-synchronization-architecture) - WooCommerce sync sequence
+11. [Amazon SP-API Architecture](#amazon-sp-api-architecture) - Amazon marketplace integration
+12. [Zoho Integration Overview](#zoho-integration-overview) - ERP integration patterns
+
+### Logistics & Shipping Diagrams
+13. [4-Step Shipping Process Architecture](#4-step-shipping-process-architecture) - Complete shipping workflow
+14. [Multi-Carrier Integration Overview](#multi-carrier-integration-overview) - Carrier management system
+15. [Real-Time Tracking Architecture](#real-time-tracking-architecture) - Tracking system design
+16. [Intelligent NDR & Reattempt Delivery Management](#intelligent-ndr--reattempt-delivery-management) - NDR handling workflow
+17. [Advanced COD Collection & Settlement Workflow](#advanced-cod-collection--settlement-workflow-3-5-day-cycle) - COD processing
+18. [Advanced Weight Dispute Resolution System](#advanced-weight-dispute-resolution-system) - Dispute management
+19. [Comprehensive Return Management Process](#comprehensive-return-management-rto-process) - RTO workflow
+
+### Security & Authentication Diagrams
+20. [Authentication Architecture](#authentication-architecture) - Security implementation
+21. [Token Lifecycle Management](#token-lifecycle-management) - JWT token flow
+22. [Role Hierarchy & Permissions](#role-hierarchy--permissions) - Access control system
+23. [Data Encryption Strategy](#data-encryption-strategy) - Encryption implementation
+24. [Real-time Security Monitoring](#real-time-security-monitoring) - Security monitoring
+
+### Database Architecture Diagrams
+25. [Database Architecture Overview](#database-architecture-overview) - Complete database design
+26. [Users & Authentication Tables](#users--authentication-tables) - User management schema
+27. [Product Management Tables](#product-management-tables) - Product data structure
+28. [Order Processing Tables](#order-processing-tables) - Order management schema
+29. [Shipment Management Tables](#shipment-management-tables) - Shipping data structure
+30. [Multi-Tenant Data Architecture](#multi-tenant-data-architecture) - Tenant isolation design
+31. [Tenant Management Tables](#tenant-management-tables) - Multi-tenancy schema
+32. [Data Integrity Constraints](#data-integrity-constraints) - Database constraints
+
+### Infrastructure & Deployment Diagrams
+33. [Azure Cloud Architecture](#azure-cloud-architecture) - Cloud infrastructure design
+34. [CI/CD Pipeline Architecture](#cicd-pipeline-architecture) - Deployment pipeline
+35. [Environment Configuration Matrix](#environment-configuration-matrix) - Environment setup
+36. [Performance Optimization Stack](#performance-optimization-stack) - Performance architecture
+37. [Security Architecture](#security-architecture) - Security infrastructure
+
+### Monitoring & Logging Diagrams
+38. [Logging Architecture Overview](#logging-architecture-overview) - Logging system design
+39. [Error Management Architecture](#error-management-architecture) - Error handling system
+40. [Performance Monitoring Stack](#performance-monitoring-stack) - Monitoring infrastructure
+41. [Alert Management Framework](#alert-management-framework) - Alert system design
+
+### Process Flow Diagrams
+42. [Master Process Flow: Order-to-Delivery](#master-process-flow-order-to-delivery) - Complete business process
+43. [Multi-Channel Data Synchronization Flow](#multi-channel-data-synchronization-flow) - Data sync patterns
+44. [Shopify Integration Workflow](#shopify-integration-workflow) - Shopify process flow
+
+---
+
 # 1. EXECUTIVE SUMMARY & BUSINESS OVERVIEW
 
 ## Advanced Operational Workflow Overview
@@ -259,7 +323,23 @@ graph TD
 
     WW --> XX[Order-to-Cash Complete]
 
+    classDef startEnd fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef platform fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef process fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef decision fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef zoho fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+    classDef shipping fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef payment fill:#fff8e1,stroke:#f57f17,stroke-width:2px,color:#e65100
+    classDef notification fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px,color:#1a237e
 
+    class A,XX startEnd
+    class C,D,E,F,G,H platform
+    class I,J,K,O,QQ process
+    class B,M,S,X decision
+    class Z,AA,BB,CC,DD,EE,FF,GG,NN,OO,PP,VV,WW zoho
+    class KK,LL,MM,RR,TT shipping
+    class R,T,U,V,W,UU payment
+    class N,P,Q,SS,Y notification
 ```
 
 **Workflow Legend:**
@@ -457,6 +537,20 @@ graph TD
 
     E --> G[Shipping Providers<br/>Bluedart, DTDC, Delhivery]
     B --> H[Customer Notifications]
+
+    classDef platform fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef core fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef process fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef database fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef shipping fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+    classDef notification fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px,color:#1a237e
+
+    class A platform
+    class B core
+    class C,D,E process
+    class F database
+    class G shipping
+    class H notification
 ```
 
 ## 2.2 Component Relationships & Data Flow
@@ -472,6 +566,20 @@ graph LR
     B --> D[Shipping Services]
     D --> E[Tracking Updates]
     E --> F[Customer Notifications]
+
+    classDef input fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef process fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef storage fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef shipping fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
+    classDef tracking fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef notification fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px,color:#1a237e
+
+    class A input
+    class B process
+    class C storage
+    class D shipping
+    class E tracking
+    class F notification
 ```
 
 ### Component Interaction Patterns
@@ -639,7 +747,15 @@ graph TD
     E --> I[Amazon SP-API]
     F --> J[eBay Trading API]
 
+    classDef core fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef integration fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef adapter fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef api fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
 
+    class A core
+    class B integration
+    class C,D,E,F adapter
+    class G,H,I,J api
 ```
 
 #### **Shipping Provider Integration**
@@ -656,7 +772,15 @@ graph TD
     E --> I[DTDC Integration API]
     F --> J[Delhivery API]
 
+    classDef core fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef factory fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef service fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef api fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#004d40
 
+    class A core
+    class B factory
+    class C,D,E,F service
+    class G,H,I,J api
 ```
 
 [↑ Back to Index](#table-of-contents)
@@ -1086,9 +1210,17 @@ graph TD
     G <--> L
 
 
+    classDef shopify fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef integration fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef core fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef sync fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef error fill:#fff8e1,stroke:#f57f17,stroke-width:2px,color:#e65100
 
-
-
+    class A,B,C,D shopify
+    class E,F integration
+    class G sync
+    class H error
+    class I,J,K,L core
 ```
 
 ### Complete Shopify Workflow with Screenshots
@@ -1388,6 +1520,8 @@ sequenceDiagram
     LF->>DH: Update Order Status
     DH->>S: Update Fulfillment Status
     S->>S: Customer Notification
+
+    %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#f5f5f5','primaryTextColor':'#000000','primaryBorderColor':'#333333','lineColor':'#333333','secondaryColor':'#e8e8e8','tertiaryColor':'#d0d0d0','activationBorderColor':'#333333','activationBkgColor':'#f0f0f0','sequenceNumberColor':'#000000'}}}%%
 ```
 
 #### **Error Handling & Recovery**
@@ -1471,8 +1605,19 @@ graph TD
 
 
 
+    classDef woocommerce fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef integration fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#bf360c
+    classDef auth fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef core fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef sync fill:#fff8e1,stroke:#f57f17,stroke-width:2px,color:#e65100
+    classDef error fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
 
-
+    class A,B,C,D,E woocommerce
+    class F,H integration
+    class G auth
+    class I sync
+    class J error
+    class K,L,M,N core
 ```
 
 ### Complete WooCommerce Workflow with Screenshots
@@ -1728,6 +1873,8 @@ sequenceDiagram
     LF->>DH: Update Order Status
     DH->>WC: PUT /wp-json/wc/v3/orders/{id}
     WC->>WC: Update Order Status
+
+    %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#f5f5f5','primaryTextColor':'#000000','primaryBorderColor':'#333333','lineColor':'#333333','secondaryColor':'#e8e8e8','tertiaryColor':'#d0d0d0','activationBorderColor':'#333333','activationBkgColor':'#f0f0f0','sequenceNumberColor':'#000000'}}}%%
 ```
 
 #### **Synchronization Scheduling**
@@ -1835,8 +1982,17 @@ graph TD
 
 
 
+    classDef amazon fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef integration fill:#f0f0f0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef core fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef auth fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef analytics fill:#e0f2f1,stroke:#333333,stroke-width:2px,color:#000000
 
-
+    class A,B,C,D,E,F amazon
+    class G,I,K integration
+    class H auth
+    class J analytics
+    class L,M,N,O core
 ```
 
 ### Amazon SP-API Integration Features
@@ -1888,6 +2044,14 @@ graph TD
     B --> D[Order Processing]
     B --> E[Inventory Sync]
     B --> F[Customer Management]
+
+    classDef channels fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef integration fill:#f0f0f0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef management fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+
+    class A channels
+    class B integration
+    class C,D,E,F management
 ```
 
 ### Integration Design Patterns
@@ -1948,9 +2112,13 @@ graph TD
     F --> I
     F --> J
 
+    classDef digihub fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef integration fill:#f0f0f0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef zoho fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
+    class A,B,C digihub
+    class D,E,F integration
+    class G,H,I,J zoho
 ```
 
 #### **Indian Market Specific Features**
@@ -2189,9 +2357,21 @@ graph TD
 
 
 
+    classDef input fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef step1 fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef step2 fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef step3 fill:#e0f2f1,stroke:#333333,stroke-width:2px,color:#000000
+    classDef step4 fill:#f0f0f0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef selection fill:#fff8e1,stroke:#333333,stroke-width:2px,color:#000000
+    classDef completion fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
+    class A input
+    class B1,B2,B3,B4 step1
+    class C1,C2,C3,C4 step2
+    class D1,D2,D3,D4 step3
+    class E1,E2,E3,E4 step4
+    class F1,F2,F3 selection
+    class G1,G2,G3,G4 completion
 ```
 
 ### Detailed Step-by-Step Process
@@ -2381,10 +2561,13 @@ graph TD
 
 
 
+    classDef system fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef carriers fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef services fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
-
+    class A,B,C,D,E system
+    class F1,F2,F3,F4 carriers
+    class G1,G2,G3,G4,G5 services
 ```
 
 ### Carrier-Specific Integrations
@@ -2605,9 +2788,13 @@ graph TD
     B4 --> C4
     B4 --> C5
 
+    classDef carriers fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef engine fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef interface fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
+    class A1,A2,A3,A4 carriers
+    class B1,B2,B3,B4,B5 engine
+    class C1,C2,C3,C4,C5 interface
 ```
 
 ### Detailed Tracking Implementation
@@ -3099,6 +3286,19 @@ graph TD
 
 
 
+    classDef success fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef process fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef decision fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef communication fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
+    classDef escalation fill:#fff8e1,stroke:#333333,stroke-width:2px,color:#000000
+    classDef return fill:#f0f0f0,stroke:#333333,stroke-width:2px,color:#000000
+
+    class C success
+    class A,D,E,F,M,N,O,P process
+    class B,G,L,Q,R,W decision
+    class H,I,J,K communication
+    class S,U,V escalation
+    class T,X,Y,Z return
 ```
 
 ### Advanced COD Collection & Settlement Workflow (3-5 Day Cycle)
@@ -3166,6 +3366,21 @@ graph TD
 
 
 
+    classDef start fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef assessment fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef delivery fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef collection fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
+    classDef processing fill:#fff8e1,stroke:#333333,stroke-width:2px,color:#000000
+    classDef settlement fill:#e0f2f1,stroke:#333333,stroke-width:2px,color:#000000
+    classDef complete fill:#f0f0f0,stroke:#333333,stroke-width:2px,color:#000000
+
+    class A start
+    class B,C,D,E assessment
+    class F,G,H,I,J delivery
+    class K,L,M,N,O collection
+    class P,Q,R,S,T processing
+    class U,V,W,X settlement
+    class Y,Z,AA,BB,CC,DD complete
 ```
 
 ### Advanced Weight Dispute Resolution System
@@ -3234,6 +3449,21 @@ graph TD
 
 
 
+    classDef start fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef detection fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef evidence fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef analysis fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
+    classDef resolution fill:#fff8e1,stroke:#333333,stroke-width:2px,color:#000000
+    classDef settlement fill:#e0f2f1,stroke:#333333,stroke-width:2px,color:#000000
+    classDef complete fill:#f0f0f0,stroke:#333333,stroke-width:2px,color:#000000
+
+    class A,B start
+    class C,D,E,F detection
+    class G,H,I,J evidence
+    class K,L,M,N analysis
+    class O,P,R,S,T resolution
+    class U,V,W,Q,X settlement
+    class Y,Z,AA,BB complete
 ```
 
 ### Comprehensive Return Management (RTO) Process
@@ -3305,6 +3535,21 @@ graph TD
 
 
 
+    classDef trigger fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef processing fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef logistics fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef condition fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
+    classDef resolution fill:#fff8e1,stroke:#333333,stroke-width:2px,color:#000000
+    classDef financial fill:#e0f2f1,stroke:#333333,stroke-width:2px,color:#000000
+    classDef complete fill:#f0f0f0,stroke:#333333,stroke-width:2px,color:#000000
+
+    class A,B trigger
+    class C,D,E,F,G,H processing
+    class I,J,K,L,M,N logistics
+    class O condition
+    class P,Q,R,S,T,U resolution
+    class V,W,X financial
+    class Y,Z,AA,BB complete
 ```
 
 **Advanced Workflow Legend:**
@@ -3365,9 +3610,13 @@ graph TD
     B2 --> C3
     B2 --> C4
 
+    classDef clients fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef auth fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef management fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
+    class A1,A2,A3,A4 clients
+    class B1,B2,B3,B4 auth
+    class C1,C2,C3,C4 management
 ```
 
 ### Core Authentication APIs
@@ -4968,6 +5217,8 @@ sequenceDiagram
     A->>R: Validate Refresh Token
     A->>A: Generate New Access Token
     A->>C: Return New Token
+
+    %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#f5f5f5','primaryTextColor':'#000000','primaryBorderColor':'#333333','lineColor':'#333333','secondaryColor':'#e8e8e8','tertiaryColor':'#d0d0d0','activationBorderColor':'#333333','activationBkgColor':'#f0f0f0','sequenceNumberColor':'#000000'}}}%%
 ```
 
 #### **Password Security Implementation**
@@ -5049,6 +5300,11 @@ graph TD
 
 
 
+    classDef roles fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef permissions fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+
+    class A,B,C,D,E roles
+    class F,G,H,I,J permissions
 ```
 
 #### **Permission Matrix**
@@ -5283,9 +5539,13 @@ graph TD
     B3 --> C3
     B4 --> C4
 
+    classDef detection fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef alerts fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef compliance fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
+    class A1,A2,A3,A4 detection
+    class B1,B2,B3,B4 alerts
+    class C1,C2,C3,C4 compliance
 ```
 
 ## 9.4 Access Control Patterns
@@ -5461,9 +5721,15 @@ graph TD
     C3 --> D2
     C4 --> D3
 
+    classDef applications fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef framework fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef destinations fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef analysis fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
+    class A1,A2,A3,A4 applications
+    class B1,B2,B3,B4 framework
+    class C1,C2,C3,C4 destinations
+    class D1,D2,D3,D4 analysis
 ```
 
 ### Winston Logger Configuration
@@ -5627,9 +5893,15 @@ graph TD
     C3 --> D3
     C4 --> D4
 
+    classDef detection fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef processing fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef storage fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef response fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
+    class A1,A2,A3,A4 detection
+    class B1,B2,B3,B4 processing
+    class C1,C2,C3,C4 storage
+    class D1,D2,D3,D4 response
 ```
 
 #### **Error Classification System**
@@ -5764,9 +6036,15 @@ graph TD
     C3 --> D3
     C4 --> D4
 
+    classDef collection fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef storage fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef processing fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef visualization fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
+    class A1,A2,A3,A4 collection
+    class B1,B2,B3,B4 storage
+    class C1,C2,C3,C4 processing
+    class D1,D2,D3,D4 visualization
 ```
 
 #### **Key Performance Indicators (KPIs)**
@@ -5911,9 +6189,15 @@ graph TD
     C3 --> D3
     C4 --> D4
 
+    classDef sources fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef processing fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef notifications fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef actions fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
+    class A1,A2,A3,A4 sources
+    class B1,B2,B3,B4 processing
+    class C1,C2,C3,C4 notifications
+    class D1,D2,D3,D4 actions
 ```
 
 #### **Escalation Procedures**
@@ -6132,6 +6416,17 @@ graph TD
 
 
 
+    classDef channels fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef processing fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef logistics fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef fulfillment fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
+    classDef postdelivery fill:#fff8e1,stroke:#333333,stroke-width:2px,color:#000000
+
+    class A1,A2,A3 channels
+    class B1,B2,B3,B4 processing
+    class C1,C2,C3,C4 logistics
+    class D1,D2,D3,D4 fulfillment
+    class E1,E2,E3,E4 postdelivery
 ```
 
 ## 11.2 Data Synchronization Diagrams
@@ -6179,9 +6474,15 @@ graph TB
     B4 --> C1 --> C2 --> C3 --> C4
     C4 --> D1 --> D2 --> D3 --> D4
 
+    classDef sources fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef ingestion fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef processing fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+    classDef distribution fill:#e3f2fd,stroke:#333333,stroke-width:2px,color:#000000
 
-
-
+    class A1,A2,A3,A4 sources
+    class B1,B2,B3,B4 ingestion
+    class C1,C2,C3,C4 processing
+    class D1,D2,D3,D4 distribution
 ```
 
 ## 11.3 Integration Pattern Workflows
@@ -6225,6 +6526,13 @@ graph TD
 
 
 
+    classDef shopify fill:#e8f5e8,stroke:#333333,stroke-width:2px,color:#000000
+    classDef integration fill:#fff3e0,stroke:#333333,stroke-width:2px,color:#000000
+    classDef digihub fill:#f3e5f5,stroke:#333333,stroke-width:2px,color:#000000
+
+    class A1,A2,A3,A4 shopify
+    class B1,B2,B3,B4 integration
+    class C1,C2,C3,C4 digihub
 ```
 
 ## 11.4 Complete Screenshot Documentation
