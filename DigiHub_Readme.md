@@ -121,11 +121,6 @@ graph TD
     F --> G[Automated Fulfillment]
     G --> H[Customer Delivery]
     H --> I[Financial Reconciliation]
-
-    style A fill:#ffebee
-    style D fill:#e8f5e8
-    style F fill:#e3f2fd
-    style I fill:#fff3e0
 ```
 
 #### **Secondary Business Flow: Order-to-Cash Automation**
@@ -141,10 +136,6 @@ graph LR
     G --> H[Delivery Confirmation]
     H --> I[Payment Processing]
     I --> J[Financial Reporting]
-
-    style A fill:#f3e5f5
-    style E fill:#e8f5e8
-    style I fill:#fff3e0
 ```
 
 ### Advanced Operational Workflow Diagrams
@@ -225,46 +216,13 @@ graph TD
 
     WW --> XX[Order-to-Cash Complete]
 
-    style I fill:#2E7D32,color:#FFFFFF
-    style J fill:#2E7D32,color:#FFFFFF
-    style K fill:#2E7D32,color:#FFFFFF
-    style L fill:#2E7D32,color:#FFFFFF
-    style O fill:#2E7D32,color:#FFFFFF
-    style R fill:#2E7D32,color:#FFFFFF
-    style U fill:#2E7D32,color:#FFFFFF
-    style V fill:#2E7D32,color:#FFFFFF
-    style W fill:#2E7D32,color:#FFFFFF
-    style T fill:#2E7D32,color:#FFFFFF
-    style Z fill:#1565C0,color:#FFFFFF
-    style AA fill:#1565C0,color:#FFFFFF
-    style BB fill:#1565C0,color:#FFFFFF
-    style CC fill:#1565C0,color:#FFFFFF
-    style DD fill:#1565C0,color:#FFFFFF
-    style EE fill:#1565C0,color:#FFFFFF
-    style FF fill:#1565C0,color:#FFFFFF
-    style GG fill:#1565C0,color:#FFFFFF
-    style HH fill:#2E7D32,color:#FFFFFF
-    style II fill:#2E7D32,color:#FFFFFF
-    style JJ fill:#2E7D32,color:#FFFFFF
-    style KK fill:#2E7D32,color:#FFFFFF
-    style LL fill:#2E7D32,color:#FFFFFF
-    style MM fill:#2E7D32,color:#FFFFFF
-    style NN fill:#1565C0,color:#FFFFFF
-    style OO fill:#1565C0,color:#FFFFFF
-    style PP fill:#1565C0,color:#FFFFFF
-    style QQ fill:#2E7D32,color:#FFFFFF
-    style RR fill:#2E7D32,color:#FFFFFF
-    style SS fill:#2E7D32,color:#FFFFFF
-    style TT fill:#2E7D32,color:#FFFFFF
-    style UU fill:#2E7D32,color:#FFFFFF
-    style VV fill:#2E7D32,color:#FFFFFF
-    style WW fill:#1565C0,color:#FFFFFF
+
 ```
 
 **Workflow Legend:**
-- **Dark Green**: Core Platform Operations (Production Ready)
-- **Dark Blue**: Zoho Books ERP Integration (Production Ready)
-- **White Text**: High-contrast readability for all diagram elements
+- **Complete Order-to-Cash Flow**: From e-commerce order creation to financial reconciliation
+- **Multi-Platform Support**: Unified processing for all integrated e-commerce channels
+- **Zoho Books Integration**: Automated ERP synchronization for financial management
 
 ### Comprehensive E-commerce Platform Integration
 
@@ -848,23 +806,7 @@ graph TD
     X --> Y[Customer Notification]
     Y --> Z[Refund Processing]
 
-    style E fill:#2E7D32,color:#FFFFFF
-    style F fill:#2E7D32,color:#FFFFFF
-    style H fill:#2E7D32,color:#FFFFFF
-    style I fill:#2E7D32,color:#FFFFFF
-    style K fill:#2E7D32,color:#FFFFFF
-    style M fill:#2E7D32,color:#FFFFFF
-    style N fill:#2E7D32,color:#FFFFFF
-    style O fill:#2E7D32,color:#FFFFFF
-    style P fill:#2E7D32,color:#FFFFFF
-    style T fill:#2E7D32,color:#FFFFFF
-    style X fill:#2E7D32,color:#FFFFFF
-    style Y fill:#2E7D32,color:#FFFFFF
-    style Z fill:#2E7D32,color:#FFFFFF
-    style J fill:#F57C00,color:#FFFFFF
-    style S fill:#F57C00,color:#FFFFFF
-    style U fill:#F57C00,color:#FFFFFF
-    style V fill:#F57C00,color:#FFFFFF
+
 ```
 
 ### Advanced COD Collection & Settlement Workflow (3-5 Day Cycle)
@@ -912,26 +854,7 @@ graph TD
 
     CC --> DD[Settlement Complete]
 
-    style B fill:#2E7D32,color:#FFFFFF
-    style C fill:#2E7D32,color:#FFFFFF
-    style D fill:#2E7D32,color:#FFFFFF
-    style F fill:#2E7D32,color:#FFFFFF
-    style G fill:#2E7D32,color:#FFFFFF
-    style L fill:#2E7D32,color:#FFFFFF
-    style N fill:#2E7D32,color:#FFFFFF
-    style O fill:#2E7D32,color:#FFFFFF
-    style P fill:#2E7D32,color:#FFFFFF
-    style R fill:#2E7D32,color:#FFFFFF
-    style S fill:#2E7D32,color:#FFFFFF
-    style T fill:#2E7D32,color:#FFFFFF
-    style V fill:#2E7D32,color:#FFFFFF
-    style W fill:#2E7D32,color:#FFFFFF
-    style X fill:#2E7D32,color:#FFFFFF
-    style Z fill:#2E7D32,color:#FFFFFF
-    style AA fill:#2E7D32,color:#FFFFFF
-    style BB fill:#2E7D32,color:#FFFFFF
-    style CC fill:#2E7D32,color:#FFFFFF
-    style H fill:#F57C00,color:#FFFFFF
+
 ```
 
 ### Advanced Weight Dispute Resolution System
@@ -978,28 +901,7 @@ graph TD
 
     AA --> BB[Process Complete]
 
-    style B fill:#2E7D32,color:#FFFFFF
-    style C fill:#2E7D32,color:#FFFFFF
-    style F fill:#2E7D32,color:#FFFFFF
-    style G fill:#2E7D32,color:#FFFFFF
-    style H fill:#2E7D32,color:#FFFFFF
-    style I fill:#2E7D32,color:#FFFFFF
-    style J fill:#2E7D32,color:#FFFFFF
-    style K fill:#2E7D32,color:#FFFFFF
-    style L fill:#2E7D32,color:#FFFFFF
-    style M fill:#2E7D32,color:#FFFFFF
-    style O fill:#2E7D32,color:#FFFFFF
-    style Q fill:#2E7D32,color:#FFFFFF
-    style U fill:#2E7D32,color:#FFFFFF
-    style V fill:#2E7D32,color:#FFFFFF
-    style W fill:#2E7D32,color:#FFFFFF
-    style X fill:#2E7D32,color:#FFFFFF
-    style Y fill:#2E7D32,color:#FFFFFF
-    style Z fill:#2E7D32,color:#FFFFFF
-    style AA fill:#2E7D32,color:#FFFFFF
-    style P fill:#F57C00,color:#FFFFFF
-    style R fill:#F57C00,color:#FFFFFF
-    style S fill:#F57C00,color:#FFFFFF
+
 ```
 
 ### Comprehensive Return Management (RTO) Process
@@ -1047,36 +949,13 @@ graph TD
     Z --> AA[Process Optimization]
     AA --> BB[Return Process Complete]
 
-    style C fill:#2E7D32,color:#FFFFFF
-    style D fill:#2E7D32,color:#FFFFFF
-    style E fill:#2E7D32,color:#FFFFFF
-    style F fill:#2E7D32,color:#FFFFFF
-    style G fill:#2E7D32,color:#FFFFFF
-    style H fill:#2E7D32,color:#FFFFFF
-    style I fill:#2E7D32,color:#FFFFFF
-    style J fill:#2E7D32,color:#FFFFFF
-    style K fill:#2E7D32,color:#FFFFFF
-    style L fill:#2E7D32,color:#FFFFFF
-    style M fill:#2E7D32,color:#FFFFFF
-    style N fill:#2E7D32,color:#FFFFFF
-    style P fill:#2E7D32,color:#FFFFFF
-    style Q fill:#2E7D32,color:#FFFFFF
-    style R fill:#2E7D32,color:#FFFFFF
-    style S fill:#2E7D32,color:#FFFFFF
-    style T fill:#2E7D32,color:#FFFFFF
-    style U fill:#2E7D32,color:#FFFFFF
-    style V fill:#2E7D32,color:#FFFFFF
-    style W fill:#2E7D32,color:#FFFFFF
-    style X fill:#2E7D32,color:#FFFFFF
-    style Y fill:#2E7D32,color:#FFFFFF
-    style Z fill:#F57C00,color:#FFFFFF
-    style AA fill:#F57C00,color:#FFFFFF
+
 ```
 
 **Advanced Workflow Legend:**
-- **Dark Green**: Production-Ready Features (Implemented)
-- **Orange**: Enhanced Features (Proposed Development)
-- **White Text**: High-contrast readability for all workflow elements
+- **Comprehensive Return Processing**: Complete RTO workflow from initiation to completion
+- **Multi-Channel Support**: Unified return handling across all e-commerce platforms
+- **Automated Quality Control**: Systematic inspection and processing workflows
 
 These sophisticated workflows demonstrate DigiHub's technical excellence in logistics automation, showcasing advanced process optimization that naturally positions the platform as a market leader through superior operational capabilities.
 
