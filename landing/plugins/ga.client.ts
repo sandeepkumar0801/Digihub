@@ -12,7 +12,7 @@ export default defineNuxtPlugin(() => {
 
   router.afterEach((to: RouteLocationNormalized) => {
     if (window.gtag) {
-      window.gtag('config', 'G-HFXNZJWGN7', {
+      window.gtag('config', 'G-F0MJT64MVT', {
         page_path: to.fullPath
       })
     }
