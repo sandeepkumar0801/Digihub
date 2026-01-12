@@ -44,7 +44,7 @@ export default defineNuxtConfig({
       // ✅ GOOGLE ANALYTICS
       script: [
         {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-F0MJT64MVT',
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-HFXNZJWGN7',
           async: true
         },
         {
@@ -52,7 +52,7 @@ export default defineNuxtConfig({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-F0MJT64MVT');
+            gtag('config', 'G-HFXNZJWGN7');
           `
         }
 
