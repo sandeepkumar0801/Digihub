@@ -9,7 +9,7 @@
           </div>
           <div>
             <div class="font-bold text-xl text-gray-900">DigiHub</div>
-            <div class="text-xs text-gray-500 -mt-1">ChannelConnector</div>
+            <div class="text-xs text-gray-500 -mt-1"></div>
           </div>
         </NuxtLink>
 
@@ -26,25 +26,42 @@
               Features
               <Icon name="heroicons:chevron-down" class="w-4 h-4 ml-1" />
             </button>
-             <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100]">
-               <div class="p-4 space-y-2">
-                <NuxtLink to="/features/multi-channel-integration" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
-                  Multi-Channel Integration
-                </NuxtLink>
-                <NuxtLink to="/features/real-time-synchronization" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
-                  Real-time Synchronization
-                </NuxtLink>
-                <NuxtLink to="/features/order-processing" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
-                  Order Processing
-                </NuxtLink>
-                <NuxtLink to="/features/logistics-management" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
-                  Logistics Management
-                </NuxtLink>
-                <NuxtLink to="/features/real-time-tracking" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
-                  Real-time Tracking
-                </NuxtLink>
-              </div>
-            </div>
+              <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100] overflow-hidden">
+                <div class="p-2 space-y-1">
+                 <div class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Core Intelligence</div>
+                 <NuxtLink to="/cod-risk-intelligence" class="flex items-start px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors group/item">
+                    <Icon name="heroicons:shield-check" class="w-5 h-5 mt-0.5 mr-3 text-gray-400 group-hover/item:text-red-500" />
+                    <div>
+                      <div class="font-semibold">COD Risk Intelligence</div>
+                      <div class="text-xs text-gray-500 font-normal">Predict fraud & risks</div>
+                    </div>
+                 </NuxtLink>
+                 <NuxtLink to="/conversion-automation" class="flex items-start px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors group/item">
+                    <Icon name="logos:whatsapp-icon" class="w-5 h-5 mt-0.5 mr-3 text-gray-400 group-hover/item:text-green-500" />
+                     <div>
+                      <div class="font-semibold">Conversion & NDR</div>
+                      <div class="text-xs text-gray-500 font-normal">Recover failed orders</div>
+                    </div>
+                 </NuxtLink>
+                 <NuxtLink to="/settlement-orchestration" class="flex items-start px-4 py-3 text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 rounded-lg transition-colors group/item">
+                    <Icon name="heroicons:currency-rupee" class="w-5 h-5 mt-0.5 mr-3 text-gray-400 group-hover/item:text-yellow-500" />
+                     <div>
+                      <div class="font-semibold">Settlement</div>
+                      <div class="text-xs text-gray-500 font-normal">T+0 instant cash flow</div>
+                    </div>
+                 </NuxtLink>
+                 
+                 <div class="h-px bg-gray-100 my-2"></div>
+                 
+                 <NuxtLink to="/add-ons" class="flex items-start px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors group/item">
+                    <Icon name="heroicons:puzzle-piece" class="w-5 h-5 mt-0.5 mr-3 text-gray-400 group-hover/item:text-blue-500" />
+                     <div>
+                      <div class="font-semibold">Platform Add-ons</div>
+                      <div class="text-xs text-gray-500 font-normal">Logistics & Connectors</div>
+                    </div>
+                 </NuxtLink>
+               </div>
+             </div>
           </div>
           <NuxtLink to="/contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">
             Contact
@@ -84,13 +101,15 @@
           About
         </NuxtLink>
           <div class="space-y-2">
-            <div class="text-gray-700 font-medium">Features</div>
+            <div class="text-gray-700 font-medium">Core Intelligence</div>
             <div class="pl-4 space-y-2 text-sm">
-              <NuxtLink to="/features/multi-channel-integration" class="block text-gray-600 hover:text-blue-600 transition-colors">Multi-Channel Integration</NuxtLink>
-              <NuxtLink to="/features/real-time-synchronization" class="block text-gray-600 hover:text-blue-600 transition-colors">Real-time Synchronization</NuxtLink>
-              <NuxtLink to="/features/order-processing" class="block text-gray-600 hover:text-blue-600 transition-colors">Order Processing</NuxtLink>
-              <NuxtLink to="/features/logistics-management" class="block text-gray-600 hover:text-blue-600 transition-colors">Logistics Management</NuxtLink>
-              <NuxtLink to="/features/real-time-tracking" class="block text-gray-600 hover:text-blue-600 transition-colors">Real-time Tracking</NuxtLink>
+              <NuxtLink to="/cod-risk-intelligence" class="block text-gray-600 hover:text-red-600 transition-colors">COD Risk Intelligence</NuxtLink>
+              <NuxtLink to="/conversion-automation" class="block text-gray-600 hover:text-green-600 transition-colors">Conversion & NDR</NuxtLink>
+              <NuxtLink to="/settlement-orchestration" class="block text-gray-600 hover:text-yellow-600 transition-colors">Settlement Orchestration</NuxtLink>
+            </div>
+             <div class="text-gray-700 font-medium pt-2">Platform</div>
+            <div class="pl-4 space-y-2 text-sm">
+              <NuxtLink to="/add-ons" class="block text-gray-600 hover:text-blue-600 transition-colors">Add-ons (Logistics, Connectors)</NuxtLink>
             </div>
           </div>
         <NuxtLink to="/contact" class="block text-gray-700 hover:text-blue-600 font-medium transition-colors">

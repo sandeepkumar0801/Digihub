@@ -10,7 +10,7 @@
             </div>
             <div>
               <div class="font-bold text-2xl">DigiHub</div>
-              <div class="text-sm text-gray-400">ChannelConnector & Logistics</div>
+              <div class="text-sm text-gray-400"></div>
             </div>
           </div>
           <p class="text-gray-300 mb-6 max-w-md leading-relaxed">

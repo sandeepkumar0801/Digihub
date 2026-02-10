@@ -1,185 +1,154 @@
 <template>
-  <div>
+  <div class="bg-black min-h-screen">
     <!-- Navigation -->
     <AppNavigation />
     
     <!-- Hero Section -->
-    <section class="py-32 bg-gradient-to-br from-slate-900 via-green-900 to-slate-900 relative overflow-hidden">
-      <!-- Background Effects -->
-      <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-      <div class="absolute top-32 left-16 w-72 h-72 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-32 right-16 w-64 h-64 bg-gradient-to-r from-teal-500/10 to-green-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
-      
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-black">
+             <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-900/20 via-black to-black"></div>
+             <!-- Cyber Grid -->
+             <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(#f97316 1px, transparent 1px), linear-gradient(90deg, #f97316 1px, transparent 1px); background-size: 50px 50px; transform: perspective(100vh) rotateX(60deg) translateY(-100px) scale(2);"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+             <div class="inline-flex items-center px-4 py-2 bg-orange-900/30 border border-orange-500/30 rounded-full text-orange-400 text-sm font-semibold mb-8 backdrop-blur-md">
+                <Icon name="heroicons:bolt" class="w-5 h-5 mr-2" />
+                <span>Sub-Second Latency</span>
+            </div>
+
+            <h1 class="text-5xl md:text-8xl font-black text-white mb-8 tracking-tight">
+                Instant <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Data Pulse</span>
+            </h1>
+
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+                Stop overselling. Our Engine syncs inventory, price, and order status across all channels in <span class="text-orange-400 font-bold">&lt; 500ms</span>.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <button class="px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white rounded-xl font-bold text-lg transition-all shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_40px_rgba(249,115,22,0.5)]">
+                    Sync Now
+                </button>
+                 <button class="px-8 py-4 bg-slate-900 border border-slate-700 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all flex items-center justify-center group">
+                    <Icon name="heroicons:server" class="w-5 h-5 mr-2 text-orange-500 group-hover:scale-110 transition-transform" />
+                    System Status
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Sync Section -->
+    <section class="py-24 bg-slate-900/30 border-t border-slate-800 relative overflow-hidden">
+      <!-- Background Pulse Animation -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+         <div class="w-[800px] h-[800px] bg-orange-500/5 rounded-full animate-pulse-slow"></div>
+         <div class="absolute w-[600px] h-[600px] bg-red-500/5 rounded-full animate-pulse-slow" style="animation-delay: 1s;"></div>
+      </div>
+
       <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center max-w-4xl mx-auto">
-          <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm rounded-full text-green-400 text-sm font-semibold mb-8 border border-green-400/30">
-            <Icon name="heroicons:bolt" class="w-5 h-5 mr-3" />
-            Real-time Synchronization
-            <Icon name="heroicons:arrow-path" class="w-5 h-5 ml-3 animate-spin" />
-          </div>
-          
-          <h1 class="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
-            <span class="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-              Lightning-Fast
-            </span>
-            <span class="block text-4xl md:text-5xl font-light mt-4 text-gray-300">
-              Data Synchronization
-            </span>
-          </h1>
-          
-          <p class="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
-            Achieve <span class="text-green-400 font-semibold">99.9% data consistency</span> across all channels with 
-            sub-second synchronization and intelligent conflict resolution.
-          </p>
-          
-          <div class="flex flex-col sm:flex-row gap-6 justify-center">
-            <button class="group relative px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl text-white font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25">
-              <div class="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div class="relative flex items-center justify-center">
-                <Icon name="heroicons:play" class="w-6 h-6 mr-3" />
-                See It in Action
-              </div>
-            </button>
-            
-            <button class="group px-8 py-4 bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl text-white font-bold text-lg transition-all duration-300 hover:bg-white/10 hover:border-green-400/50">
-              <div class="flex items-center justify-center">
-                <Icon name="heroicons:document-text" class="w-6 h-6 mr-3 group-hover:text-green-400 transition-colors" />
-                Technical Details
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Synchronization Types Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="container mx-auto px-6">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">Synchronization Architecture</h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Multi-layered synchronization approach ensuring data consistency across all platforms
-          </p>
+          <h2 class="text-3xl font-bold text-white mb-4">The Nervous System</h2>
+          <p class="text-gray-400">Everything stays in perfect harmony.</p>
         </div>
         
-        <div class="grid md:grid-cols-2 gap-12">
-          <!-- Event-Driven Sync -->
-          <div class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
-              <Icon name="heroicons:bolt" class="w-8 h-8 text-white" />
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Event-Driven Synchronization</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Real-time event notifications from e-commerce platforms trigger immediate data synchronization with reliable event processing and retry mechanisms.
-            </p>
-            
-            <div class="space-y-4">
-              <div class="flex items-center">
-                <Icon name="heroicons:check-circle" class="w-5 h-5 text-green-500 mr-3" />
-                <span class="text-gray-700">Webhook Integration</span>
-              </div>
-              <div class="flex items-center">
-                <Icon name="heroicons:check-circle" class="w-5 h-5 text-green-500 mr-3" />
-                <span class="text-gray-700">Event Queue Processing</span>
-              </div>
-              <div class="flex items-center">
-                <Icon name="heroicons:check-circle" class="w-5 h-5 text-green-500 mr-3" />
-                <span class="text-gray-700">Automated Conflict Resolution</span>
-              </div>
-              <div class="flex items-center">
-                <Icon name="heroicons:check-circle" class="w-5 h-5 text-green-500 mr-3" />
-                <span class="text-gray-700">Complete Audit Trail</span>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Scheduled Sync -->
-          <div class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-              <Icon name="heroicons:clock" class="w-8 h-8 text-white" />
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Scheduled Synchronization</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">
-              Automated cron job management ensures continuous data consistency with incremental sync and intelligent batch processing for optimal performance.
-            </p>
-            
-            <div class="space-y-4">
-              <div class="flex items-center">
-                <Icon name="heroicons:check-circle" class="w-5 h-5 text-blue-500 mr-3" />
-                <span class="text-gray-700">Cron Job Management</span>
-              </div>
-              <div class="flex items-center">
-                <Icon name="heroicons:check-circle" class="w-5 h-5 text-blue-500 mr-3" />
-                <span class="text-gray-700">Incremental Data Processing</span>
-              </div>
-              <div class="flex items-center">
-                <Icon name="heroicons:check-circle" class="w-5 h-5 text-blue-500 mr-3" />
-                <span class="text-gray-700">Batch Processing Optimization</span>
-              </div>
-              <div class="flex items-center">
-                <Icon name="heroicons:check-circle" class="w-5 h-5 text-blue-500 mr-3" />
-                <span class="text-gray-700">Error Recovery Mechanisms</span>
-              </div>
-            </div>
-          </div>
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+             <!-- Source -->
+             <div class="bg-black border border-slate-800 p-8 rounded-3xl text-center">
+                 <Icon name="heroicons:building-storefront" class="w-16 h-16 text-gray-500 mx-auto mb-4" />
+                 <h3 class="text-xl font-bold text-white">Warehouse</h3>
+                 <p class="text-gray-500 text-sm mt-2">Stock Level: <span class="text-orange-500 font-bold">100</span></p>
+             </div>
+
+             <!-- Connection -->
+             <div class="hidden md:flex flex-col items-center justify-center">
+                 <div class="w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent relative overflow-hidden">
+                     <div class="absolute top-0 left-0 w-full h-full bg-white opacity-50 animate-shimmer"></div>
+                 </div>
+                 <div class="mt-4 px-4 py-1 bg-orange-900/50 rounded-full text-orange-400 text-xs font-bold border border-orange-500/50">
+                     SYNCING
+                 </div>
+                 <div class="w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent mt-4 relative overflow-hidden">
+                      <div class="absolute top-0 left-0 w-full h-full bg-white opacity-50 animate-shimmer-reverse"></div>
+                 </div>
+             </div>
+
+             <!-- Destination -->
+             <div class="grid grid-rows-3 gap-4">
+                 <div class="bg-black border border-slate-800 p-4 rounded-xl flex items-center justify-between">
+                     <div class="flex items-center">
+                         <Icon name="logos:shopify" class="w-6 h-6 mr-3" />
+                         <span class="text-white text-sm">Shopify</span>
+                     </div>
+                     <span class="text-orange-500 font-bold text-sm">100</span>
+                 </div>
+                 <div class="bg-black border border-slate-800 p-4 rounded-xl flex items-center justify-between">
+                     <div class="flex items-center">
+                         <Icon name="logos:amazon" class="w-6 h-6 mr-3" />
+                         <span class="text-white text-sm">Amazon</span>
+                     </div>
+                     <span class="text-orange-500 font-bold text-sm">100</span>
+                 </div>
+                 <div class="bg-black border border-slate-800 p-4 rounded-xl flex items-center justify-between">
+                     <div class="flex items-center">
+                         <Icon name="logos:woocommerce" class="w-6 h-6 mr-3" />
+                         <span class="text-white text-sm">WooCommerce</span>
+                     </div>
+                     <span class="text-orange-500 font-bold text-sm">100</span>
+                 </div>
+             </div>
         </div>
       </div>
     </section>
 
-    <!-- Data Flow Architecture -->
-    <section class="py-32 bg-gradient-to-br from-gray-900 to-black">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-20">
-          <h2 class="text-5xl font-bold text-white mb-6">Data Synchronization Flow</h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Comprehensive data pipeline ensuring seamless information flow across all platforms
-          </p>
+    <!-- Key Features Section -->
+ <section class="py-24 bg-black relative">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl font-bold text-white mb-6">Data Pipeline</h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Streamline your data processing with real-time validation and distribution.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card 1: Data Validation -->
+      <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 text-center">
+        <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+          <Icon name="heroicons:check-badge" class="w-8 h-8 text-white" />
         </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- Flow Steps -->
-          <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 text-center">
-            <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-              <Icon name="heroicons:arrow-down-tray" class="w-8 h-8 text-white" />
-            </div>
-            <h3 class="text-xl font-bold text-white mb-4">Data Ingestion</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Collect data from multiple e-commerce platforms through APIs, webhooks, and scheduled polling
-            </p>
-          </div>
-          
-          <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 text-center">
-            <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-              <Icon name="heroicons:shield-check" class="w-8 h-8 text-white" />
-            </div>
-            <h3 class="text-xl font-bold text-white mb-4">Data Validation</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Validate, clean, and transform incoming data to ensure consistency and accuracy
-            </p>
-          </div>
-          
-          <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 text-center">
-            <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-              <Icon name="heroicons:cog-6-tooth" class="w-8 h-8 text-white" />
-            </div>
-            <h3 class="text-xl font-bold text-white mb-4">Processing</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Apply business rules, resolve conflicts, and normalize data into unified format
-            </p>
-          </div>
-          
-          <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 text-center">
-            <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-              <Icon name="heroicons:arrow-up-tray" class="w-8 h-8 text-white" />
-            </div>
-            <h3 class="text-xl font-bold text-white mb-4">Distribution</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Distribute synchronized data to all connected platforms with real-time updates
-            </p>
-          </div>
-        </div>
+        <h3 class="text-xl font-bold text-white mb-4">Data Validation</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Validate, clean, and transform incoming data to ensure consistency and accuracy.
+        </p>
       </div>
-    </section>
+
+      <!-- Card 2: Processing -->
+      <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 text-center">
+        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+          <Icon name="heroicons:cog-6-tooth" class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">Processing</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Apply business rules, resolve conflicts, and normalize data into a unified format.
+        </p>
+      </div>
+
+      <!-- Card 3: Distribution -->
+      <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-700 text-center">
+        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+          <Icon name="heroicons:arrow-up-tray" class="w-8 h-8 text-white" />
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">Distribution</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Distribute synchronized data to all connected platforms with real-time updates.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Synchronization Schedule -->
     <section class="py-20 bg-white">
