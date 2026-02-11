@@ -12,13 +12,14 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@iconify-json/heroicons": "^1.2.3",
     "@nuxt/devtools": "latest",
     "nuxt": "^3.13.0"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@nuxt/icon": "^1.5.4",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@vueuse/nuxt": "^11.1.0",
-    "@nuxt/icon": "^1.5.4"
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@vueuse/nuxt": "^11.1.0"
   }
 }

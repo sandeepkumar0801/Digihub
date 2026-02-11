@@ -31,18 +31,18 @@
             </div>
             
             <h1 class="text-6xl md:text-7xl font-black mb-6 leading-tight tracking-tight animate-fade-in-up" style="animation-delay: 0.1s;">
-              <span class="block text-white mb-2">COD Intelligence:</span>
+              <span class="block text-white mb-2">Smart COD.<br> On Autopilot:</span>
               <span class="bg-gradient-to-r from-red-400 via-orange-400 to-amber-400 bg-clip-text text-transparent animate-gradient">
-                Risk, Conversion & Settlement
+                Less Risk. More Cash. Zero Effort.
               </span>
             </h1>
             
             <p class="text-xl md:text-2xl mb-10 text-gray-400 leading-relaxed max-w-2xl animate-fade-in-up" style="animation-delay: 0.2s;">
-              Thin integration, deep intelligence. We orchestrate the chaotic layer between brands and courier partners with 
-              <span class="text-white font-semibold">Predictive Risk Scoring</span>, 
-              <span class="text-white font-semibold">Automated NDR</span>, and 
-              <span class="text-white font-semibold">T+0 Settlement</span>.
-            </p>
+  <b class="text-white">Intelligence</b> for the last mile. 
+  Our AI analyzes <span class="text-white font-semibold">500+ signals</span> in real-time to 
+  <span class="text-white font-semibold">protect your profits</span>—predicting delivery risk 
+  and settling your funds instantly without changing how you work.
+</p>
             
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-6 mb-12 animate-fade-in-up" style="animation-delay: 0.3s;">
@@ -61,21 +61,28 @@
                   See It In Action
                 </div>
               </button>
+
+              <button class="group px-8 py-4 bg-transparent border border-gray-600 rounded-2xl text-gray-300 font-bold text-lg transition-all duration-300 hover:border-white hover:text-white">
+                <NuxtLink to="/add-ons" class="flex items-center justify-center">
+                  <Icon name="heroicons:squares-plus" class="w-6 h-6 mr-3 transition-colors" />
+                  More Features
+                </NuxtLink>
+              </button>
             </div>
             
             <!-- Trust Indicators -->
-            <div class="flex flex-wrap gap-8 text-sm animate-fade-in-up" style="animation-delay: 0.4s;">
-              <div class="flex items-center text-gray-400">
-                <Icon name="heroicons:shield-check" class="w-5 h-5 mr-2 text-green-400" />
-                <span>Risk Intelligence</span>
+            <div class="flex flex-wrap gap-4 text-sm animate-fade-in-up" style="animation-delay: 0.4s;">
+              <div class="flex items-center text-gray-300 bg-white/5 px-4 py-2 rounded-full border border-white/10 checkbox-glow transition-all hover:bg-white/10">
+                <Icon name="heroicons:no-symbol" class="w-4 h-4 mr-2 text-red-400" />
+                <span>No Heavy SDKs</span>
               </div>
-              <div class="flex items-center text-gray-400">
-                <Icon name="heroicons:currency-rupee" class="w-5 h-5 mr-2 text-yellow-400" />
-                <span>NBFC Settlement</span>
+              <div class="flex items-center text-gray-300 bg-white/5 px-4 py-2 rounded-full border border-white/10 checkbox-glow transition-all hover:bg-white/10">
+                <Icon name="heroicons:truck" class="w-4 h-4 mr-2 text-blue-400" />
+                <span>Carrier Agnostic</span>
               </div>
-              <div class="flex items-center text-gray-400">
-                <Icon name="heroicons:bolt" class="w-5 h-5 mr-2 text-cyan-400" />
-                <span>Thin Integration</span>
+              <div class="flex items-center text-gray-300 bg-white/5 px-4 py-2 rounded-full border border-white/10 checkbox-glow transition-all hover:bg-white/10">
+                <Icon name="heroicons:lock-open" class="w-4 h-4 mr-2 text-purple-400" />
+                <span>Checkout Independent</span>
               </div>
             </div>
           </div>
@@ -84,85 +91,15 @@
           <div class="relative animate-fade-in-left" style="animation-delay: 0.2s;">
             <!-- Main 3D Visualization Container -->
             <div class="relative w-full h-96 lg:h-[600px]">
-              <!-- Central Hub Visualization -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="relative">
-                  <!-- Central Core: BRAIN / AI -->
-                  <div class="w-40 h-40 bg-gradient-to-br from-slate-800 to-black rounded-full border border-slate-700 animate-pulse-slow shadow-3xl shadow-red-500/20 flex items-center justify-center z-10 relative">
-                     <!-- Neural Network Graphic Placeholder -->
-                    <Icon name="heroicons:cpu-chip" class="w-20 h-20 text-red-500" />
-                    <!-- Rings -->
-                    <div class="absolute inset-0 border border-red-500/30 rounded-full animate-ping-slow"></div>
-                  </div>
-
-                  <!-- Orbiting Modules -->
-                  <div class="absolute inset-0 animate-spin-very-slow">
-                     <!-- Module A: Risk -->
-                    <div class="absolute -top-24 left-1/2 transform -translate-x-1/2">
-                        <div class="w-20 h-20 bg-slate-900/90 backdrop-blur border border-red-500/50 rounded-xl flex flex-col items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer">
-                            <Icon name="heroicons:shield-exclamation" class="w-8 h-8 text-red-500 mb-1" />
-                            <span class="text-[10px] text-gray-300 font-mono">RISK</span>
-                        </div>
-                    </div>
-                    <!-- Module B: Conversion -->
-                    <div class="absolute top-1/2 -right-32 transform -translate-y-1/2">
-                         <div class="w-20 h-20 bg-slate-900/90 backdrop-blur border border-green-500/50 rounded-xl flex flex-col items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer">
-                            <Icon name="logos:whatsapp-icon" class="w-8 h-8 text-green-500 mb-1" />
-                            <span class="text-[10px] text-gray-300 font-mono">CONVERT</span>
-                        </div>
-                    </div>
-                    <!-- Module C: Settlement -->
-                    <div class="absolute -bottom-24 left-1/2 transform -translate-x-1/2">
-                         <div class="w-20 h-20 bg-slate-900/90 backdrop-blur border border-yellow-500/50 rounded-xl flex flex-col items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer">
-                            <Icon name="heroicons:currency-rupee" class="w-8 h-8 text-yellow-500 mb-1" />
-                            <span class="text-[10px] text-gray-300 font-mono">SETTLE</span>
-                        </div>
-                    </div>
-                     <!-- Add-on: Logistics -->
-                     <div class="absolute top-1/2 -left-32 transform -translate-y-1/2 opacity-50">
-                        <div class="w-16 h-16 bg-slate-900/50 backdrop-blur border border-slate-600/30 rounded-xl flex flex-col items-center justify-center dashed-border">
-                           <Icon name="heroicons:truck" class="w-6 h-6 text-slate-500 mb-1" />
-                           <span class="text-[9px] text-slate-500 font-mono">LOGISTICS</span>
-                       </div>
-                   </div>
-                  </div>
-                  
-                  <!-- Connections -->
-                  <div class="absolute inset-0 pointer-events-none">
-                     <svg class="w-full h-full visible" viewBox="0 0 400 400" style="overflow: visible;">
-                        <circle cx="200" cy="200" r="140" fill="none" class="stroke-slate-700/30" stroke-width="1" />
-                        <circle cx="200" cy="200" r="140" fill="none" class="stroke-red-500/20 stroke-dasharray-10 animate-spin-reverse" stroke-width="2" />
-                     </svg>
-                  </div>
-                </div>
-              </div>
-              
-               <!-- Floating Stats Cards -->
-               <div class="absolute top-0 right-0 animate-float" style="animation-delay: 1s;">
-                  <div class="bg-black/60 backdrop-blur-md border border-red-500/30 p-4 rounded-xl shadow-2xl">
-                      <div class="text-xs text-gray-400 mb-1">RTO Prediction</div>
-                      <div class="flex items-center gap-2">
-                          <span class="text-xl font-bold text-red-500">High Risk</span>
-                          <span class="px-2 py-0.5 bg-red-500/20 text-red-300 text-[10px] rounded uppercase">Block</span>
-                      </div>
-                  </div>
-               </div>
-
-               <div class="absolute bottom-10 left-0 animate-float" style="animation-delay: 2s;">
-                  <div class="bg-black/60 backdrop-blur-md border border-green-500/30 p-4 rounded-xl shadow-2xl">
-                      <div class="text-xs text-gray-400 mb-1">COD Settlement</div>
-                      <div class="flex items-center gap-2">
-                          <span class="text-xl font-bold text-green-500">T+0 Instant</span>
-                          <Icon name="heroicons:check-badge" class="w-4 h-4 text-green-500" />
-                      </div>
-                  </div>
-               </div>
-
+               <HomeHeroVisual />
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Differentiator Intro (No Rip & Replace) -->
+    <DifferentiatorIntro />
 
     <!-- The Problem Section -->
     <section class="py-24 bg-black relative overflow-hidden">
@@ -195,9 +132,9 @@
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4"><span class="text-red-500">High RTO</span> & Returns</h3>
                 <p class="text-gray-400 leading-relaxed mb-6">
-                   No unified buyer intelligence means you're flying blind.
+                   Lacking <span class="text-white font-semibold">Predictive Identity Resolution</span> means you're operating on noise.
                    <br><br>
-                   <span class="text-white font-semibold">The Result:</span> 2-way freight loss, damaged inventory, and operational waste.
+                   <span class="text-white font-semibold">The Outcome:</span> Deterministic losses from probabilistic risks.
                 </p>
                 <div class="h-1 w-full bg-slate-800 rounded-full overflow-hidden">
                    <div class="h-full bg-red-600 w-3/4"></div>
@@ -244,10 +181,10 @@
        <div class="absolute inset-0 bg-gradient-to-b from-slate-900 to-black pointer-events-none"></div>
        <div class="container mx-auto px-6 relative z-10">
           <h2 class="text-3xl md:text-5xl font-black text-white mb-6">
-            The <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-green-500 to-yellow-500">Intelligence Layer</span>
+            The <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-green-500 to-yellow-500">Cognitive Fabric</span>
           </h2>
           <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-             You wouldnt even notice. We optimize the money and data flowing through them.
+             It's not just data; it's <b>Computational Intuition</b>. Our proprietary ML algorithms optimize the financial and operational vitality of every order without you lifting a finger.
           </p>
        </div>
     </section>
@@ -266,7 +203,7 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-6xl font-black text-white mb-6">
-                    End-to-End <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Intelligence Flow</span>
+                    End-to-End <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Neural Flow</span>
                 </h2>
                 <p class="text-xl text-gray-400">From checkout to bank account, we orchestrate every millisecond.</p>
             </div>
@@ -282,8 +219,8 @@
                         <div class="w-16 h-16 mx-auto bg-blue-900/30 rounded-full flex items-center justify-center mb-4 text-blue-400 border border-blue-500/30">
                             <Icon name="heroicons:shopping-cart" class="w-8 h-8" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">1. Checkout</h3>
-                        <p class="text-sm text-gray-500">Real-time risk scoring plugin analyzes customer intent instantly.</p>
+                        <h3 class="text-lg font-bold text-white mb-2">1. Checkout Signal</h3>
+                        <p class="text-sm text-gray-500">Real-time Inference Engine analyzes customer intent instantly.</p>
                     </div>
 
                     <!-- Step 2: Risk Engine -->
@@ -291,8 +228,8 @@
                         <div class="w-16 h-16 mx-auto bg-red-900/30 rounded-full flex items-center justify-center mb-4 text-red-500 border border-red-500/30 animate-pulse">
                             <Icon name="heroicons:cpu-chip" class="w-8 h-8" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">2. Decision</h3>
-                        <p class="text-sm text-gray-500">AI accepts, blocks, or converts COD to partial payment based on risk.</p>
+                        <h3 class="text-lg font-bold text-white mb-2">2. Decision Matrix</h3>
+                        <p class="text-sm text-gray-500">Predictive Models accept, block, or convert COD to partial payment based on risk.</p>
                     </div>
 
                     <!-- Step 3: Fulfillment & Recovery -->
@@ -353,8 +290,8 @@
                     <div class="w-14 h-14 bg-indigo-900/20 rounded-2xl flex items-center justify-center mb-6 border border-indigo-500/20 group-hover:border-indigo-500/50 transition-colors">
                         <Icon name="heroicons:server-stack" class="w-8 h-8 text-indigo-500" />
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Unified Intelligence</h3>
-                    <p class="text-gray-400 leading-relaxed">A single brain for <span class="text-indigo-400">Risk → Conversion → Settlement</span>. No silos, just pure execution flow across the entire lifecycle.</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">Neural Unification</h3>
+                    <p class="text-gray-400 leading-relaxed">A centralized <span class="text-indigo-400">Neural Cortex</span> for Risk → Conversion → Settlement. No silos, just pure execution flow.</p>
                 </div>
 
                 <!-- Card 2: Liquidity -->
@@ -373,8 +310,8 @@
                      <div class="w-14 h-14 bg-purple-900/20 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20 group-hover:border-purple-500/50 transition-colors">
                         <Icon name="heroicons:share" class="w-8 h-8 text-purple-500" />
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Network Operations</h3>
-                    <p class="text-gray-400 leading-relaxed">Aggregated intelligence from high-volume D2C & ONDC segments reduces <span class="text-purple-400">CAC</span> and logistics costs for everyone.</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">Swarm Intelligence</h3>
+                    <p class="text-gray-400 leading-relaxed"><span class="text-purple-400">Federated Learning</span> from high-volume D2C & ONDC segments reduces CAC and logistics costs for everyone.</p>
                 </div>
 
                  <!-- Card 4: AI/ML Focus -->
@@ -411,7 +348,7 @@
                                  <Icon name="heroicons:arrow-right" class="w-6 h-6 text-pink-500" />
                              </div>
                              <div class="w-24 h-24 bg-pink-900/20 rounded-xl border border-pink-500/30 flex items-center justify-center">
-                                 <Icon name="heroicons:brain-circuit" class="w-12 h-12 text-pink-500" />
+                                 <Icon name="heroicons:sparkles" class="w-12 h-12 text-pink-500" />
                              </div>
                         </div>
                      </div>
@@ -433,6 +370,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Differentiator Benefits (Zero Tax, Freedom) -->
+    <DifferentiatorBenefits />
 
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-red-600 to-orange-600 text-white relative overflow-hidden">

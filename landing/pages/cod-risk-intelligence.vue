@@ -46,9 +46,12 @@
         <div class="container mx-auto px-6">
              <div class="text-center mb-20">
                  <h2 class="text-3xl md:text-5xl font-black text-white mb-6">The 100+ Parameter Scan</h2>
-                 <p class="text-gray-400 max-w-2xl mx-auto">
+                 <p class="text-gray-400 max-w-2xl mx-auto mb-12">
                     As soon as 'Place Order' is clicked, our engine runs a millisecond-fast check across four key pillars.
                  </p>
+                 <div class="max-w-2xl mx-auto mb-16">
+                    <RiskVisual />
+                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -185,43 +188,90 @@
         </div>
     </section>
 
-    <!-- Case Study -->
-    <section class="py-24 bg-slate-900/50">
-        <div class="container mx-auto px-6">
-            <div class="bg-gradient-to-br from-slate-900 to-black border border-slate-800 rounded-3xl p-8 md:p-16 relative overflow-hidden">
-                 <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-red-900/10 to-transparent pointer-events-none"></div>
+    <!-- Savings Calculator -->
+    <section class="py-24 bg-slate-900/30 border-t border-slate-800 relative overflow-hidden">
+        <div class="absolute inset-0 bg-red-900/5 pointer-events-none"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+               <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Calculate Your Savings</h2>
+               <p class="text-gray-400">See how much revenue you're bleeding to RTO.</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+              <RiskCalculator />
+            </div>
+        </div>
+    </section>
 
-                 <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                     <div>
-                         <div class="inline-flex items-center px-4 py-2 bg-red-500/10 text-red-400 text-xs font-bold rounded-full mb-8">CASE STUDY</div>
-                         <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Scale Without The Burn</h2>
-                         <p class="text-lg text-gray-400 mb-8 leading-relaxed">
-                             <strong class="text-white">A high-growth electronics brand</strong> selling premium headphones (₹8,000+) faced a 40% RTO rate, killing their marketing ROI. 
-                             <br><br>
-                             They integrated our Risk Intelligence with a Partial Payment nudge for "Medium Risk" orders.
-                         </p>
-                         <button class="text-red-400 font-bold hover:text-red-300 flex items-center transition-colors">
-                             Read Full Story <Icon name="heroicons:arrow-right" class="ml-2 w-5 h-5"/>
-                         </button>
-                     </div>
-                     
-                     <div class="bg-black/50 border border-slate-700 rounded-2xl p-8">
-                         <div class="space-y-6">
-                             <div class="flex justify-between items-center border-b border-slate-700 pb-4">
-                                 <div class="text-gray-400">Fraud Orders</div>
-                                 <div class="text-green-500 font-bold flex items-center"><Icon name="heroicons:arrow-trending-down" class="w-4 h-4 mr-2"/> Near Zero</div>
-                             </div>
-                             <div class="flex justify-between items-center border-b border-slate-700 pb-4">
-                                 <div class="text-gray-400">RTO Rate</div>
-                                 <div class="text-green-500 font-bold flex items-center"><Icon name="heroicons:arrow-trending-down" class="w-4 h-4 mr-2"/> -28% (Month 1)</div>
-                             </div>
-                             <div class="flex justify-between items-center">
-                                 <div class="text-gray-400">Net Profit</div>
-                                 <div class="text-green-500 font-bold flex items-center"><Icon name="heroicons:arrow-trending-up" class="w-4 h-4 mr-2"/> +15%</div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+    <!-- Case Study -->
+   <section class="py-24 bg-slate-900/50">
+  <div class="container mx-auto px-6">
+    <div class="bg-gradient-to-br from-slate-900 to-black border border-slate-800 rounded-3xl p-8 md:p-16 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-red-900/10 to-transparent pointer-events-none"></div>
+
+      <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Column -->
+        <div>
+          <div class="inline-flex items-center px-4 py-2 bg-red-500/10 text-red-400 text-xs font-bold rounded-full mb-8">CASE STUDY</div>
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Scale Without The Burn</h2>
+          <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+            <strong class="text-white">A high-growth electronics brand</strong> selling premium headphones (₹8,000+) faced a 40% RTO rate, killing their marketing ROI. 
+            <br><br>
+            They integrated our Risk Intelligence with a Partial Payment nudge for "Medium Risk" orders.
+          </p>
+          <button class="text-red-400 font-bold hover:text-red-300 flex items-center transition-colors">
+            Read Full Story <Icon name="heroicons:arrow-right" class="ml-2 w-5 h-5"/>
+          </button>
+        </div>
+
+        <!-- Right Column -->
+        <div class="bg-black/50 border border-slate-700 rounded-2xl p-8">
+          <div class="space-y-6">
+            <div class="flex justify-between items-center border-b border-slate-700 pb-4">
+              <div class="text-gray-400">Fraud Orders</div>
+              <div class="text-green-500 font-bold flex items-center"><Icon name="heroicons:arrow-trending-down" class="w-4 h-4 mr-2"/> Near Zero</div>
+            </div>
+            <div class="flex justify-between items-center border-b border-slate-700 pb-4">
+              <div class="text-gray-400">RTO Rate</div>
+              <div class="text-green-500 font-bold flex items-center"><Icon name="heroicons:arrow-trending-down" class="w-4 h-4 mr-2"/> -28% (Month 1)</div>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="text-gray-400">Net Profit</div>
+              <div class="text-green-500 font-bold flex items-center"><Icon name="heroicons:arrow-trending-up" class="w-4 h-4 mr-2"/> +15%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-black border-t border-slate-900">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 hover:border-red-500/30 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                        <Icon name="heroicons:cpu-chip" class="w-6 h-6 mr-3 text-red-500" />
+                        How does the AI detect fraud?
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed">Our engine analyzes 100+ signals including device fingerprint, network history across 5000+ merchants, and behavioral patterns to generate a risk score in &lt;200ms.</p>
+                </div>
+                <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 hover:border-red-500/30 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                        <Icon name="heroicons:adjustments-horizontal" class="w-6 h-6 mr-3 text-red-500" />
+                        Can I customize risk rules?
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed">Yes, you can set custom thresholds for High, Medium, and Low risk, and define specific actions for each (e.g., Block, Convert, or Verify).</p>
+                </div>
+                 <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 hover:border-red-500/30 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                        <Icon name="heroicons:user-plus" class="w-6 h-6 mr-3 text-red-500" />
+                        Does this work for new customers?
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed">Absolutely. We use "Guest Identity Resolution" to match new visitors against our network-wide database of over 150 million shoppers.</p>
+                </div>
             </div>
         </div>
     </section>

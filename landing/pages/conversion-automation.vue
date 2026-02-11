@@ -81,6 +81,11 @@
                         <Icon name="heroicons:check-circle" class="w-6 h-6 mr-3" />
                         The NDR Suite Way
                     </h3>
+                    
+                    <div class="mb-8">
+                        <RecoveryVisual />
+                    </div>
+
                     <ul class="space-y-6">
                         <li class="flex items-start text-white">
                             <div class="min-w-8">
@@ -181,6 +186,50 @@
                         We don't trust "Delivery Failed" tags. We verify with the customer if the courier actually reached the location.
                         <span class="block mt-4 text-white text-sm font-bold">100% Transparency.</span>
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recovery Calculator -->
+    <section class="py-24 bg-slate-900/30 border-t border-slate-800 relative overflow-hidden">
+        <div class="absolute inset-0 bg-green-900/5 pointer-events-none"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+               <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Estimate Your Recovery</h2>
+               <p class="text-gray-400">Turn failed deliveries into profit.</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+              <ConversionCalculator />
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-black border-t border-slate-900">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 hover:border-green-500/30 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                        <Icon name="logos:whatsapp-icon" class="w-6 h-6 mr-3" />
+                         How do you contact customers?
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed">We use an orchestrated mix of WhatsApp (Official API), SMS, and automated IVR calls. We prioritize WhatsApp as it has the highest response rate.</p>
+                </div>
+                <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 hover:border-green-500/30 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                        <Icon name="heroicons:trophy" class="w-6 h-6 mr-3 text-green-500" />
+                        What is the success rate?
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed">On average, we recover 30-40% of orders that would have otherwise returned to origin (RTO). For some categories like fashion, it exceeds 50%.</p>
+                </div>
+                 <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 hover:border-green-500/30 transition-colors">
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                        <Icon name="heroicons:bolt" class="w-6 h-6 mr-3 text-green-500" />
+                        Is WhatsApp automated?
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed">Yes, 100% automated. Our bots handle address corrections, delivery rescheduling, and intent verification instantly 24/7.</p>
                 </div>
             </div>
         </div>

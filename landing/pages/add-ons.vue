@@ -150,13 +150,7 @@
           <p class="text-gray-400">Connect with the world's leading e-commerce platforms and carriers.</p>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <!-- Logos (Recreated simplified versions) -->
-             <div class="flex items-center justify-center p-6 bg-white/5 rounded-xl border border-white/10"><Icon name="heroicons:shopping-bag" class="w-8 h-8 text-white mr-2" /><span class="font-bold">Shopify</span></div>
-             <div class="flex items-center justify-center p-6 bg-white/5 rounded-xl border border-white/10"><Icon name="heroicons:globe-alt" class="w-8 h-8 text-white mr-2" /><span class="font-bold">WooCommerce</span></div>
-             <div class="flex items-center justify-center p-6 bg-white/5 rounded-xl border border-white/10"><Icon name="heroicons:shopping-cart" class="w-8 h-8 text-white mr-2" /><span class="font-bold">Magento</span></div>
-             <div class="flex items-center justify-center p-6 bg-white/5 rounded-xl border border-white/10"><Icon name="heroicons:building-storefront" class="w-8 h-8 text-white mr-2" /><span class="font-bold">Amazon</span></div>
-        </div>
+       
 
         <!-- Screenshots -->
         <div class="grid md:grid-cols-2 gap-8 mt-16">

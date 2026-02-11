@@ -58,6 +58,21 @@
           <h3 class="font-semibold text-lg mb-4">Features</h3>
           <ul class="space-y-2">
             <li>
+              <NuxtLink to="/cod-risk-intelligence" class="text-gray-300 hover:text-white transition-colors">
+                COD Risk Intelligence
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/conversion-automation" class="text-gray-300 hover:text-white transition-colors">
+                Conversion & NDR
+              </NuxtLink>
+            </li>
+             <li>
+              <NuxtLink to="/settlement-orchestration" class="text-gray-300 hover:text-white transition-colors">
+                Settlement
+              </NuxtLink>
+            </li>
+            <li>
               <NuxtLink to="/features/multi-channel-integration" class="text-gray-300 hover:text-white transition-colors">
                 Multi-Channel Integration
               </NuxtLink>
@@ -72,7 +87,7 @@
                 Order Processing
               </NuxtLink>
             </li>
-            <li>
+             <li>
               <NuxtLink to="/features/logistics-management" class="text-gray-300 hover:text-white transition-colors">
                 Logistics Management
               </NuxtLink>
